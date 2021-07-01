@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuremap [
+  <!ELEMENT configuremap (configure)+>
+  <!ATTLIST configuremap xmlns CDATA #FIXED ''>
+  <!ELEMENT configure EMPTY>
+  <!ATTLIST configure xmlns CDATA #FIXED '' name NMTOKEN #REQUIRED
+    value CDATA #REQUIRED>
+]>
+<!--
+  ImageMagick build configuration.
+-->
+<configuremap>
+  <configure name="CC" value="/Applications/Xcode.app/Contents/Developer/usr/bin/gcc"/>
+  <configure name="CFLAGS" value=" -I/usr/local/Cellar/webp/1.2.0/include -I/usr/local/Cellar/webp/1.2.0/include -I/usr/local/Cellar/libpng/1.6.37/include/libpng16 -I/usr/local/Cellar/openexr/3.0.3/include -I/usr/local/Cellar/openexr/3.0.3/include/OpenEXR -I/usr/local/Cellar/imath/3.0.3/include -I/usr/local/Cellar/imath/3.0.3/include/Imath -I/usr/local/Cellar/xz/5.2.5/include -I/usr/local/Cellar/openjpeg/2.4.0/include/openjpeg-2.4 -I/usr/local/Cellar/little-cms2/2.12/include -I/usr/local/Cellar/fontconfig/2.13.1/include -I/usr/local/opt/freetype/include/freetype2    -Wall -arch arm64 -I/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/usr/include -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk -miphoneos-version-min=9.0 -O3 -fembed-bitcode -DTARGET_OS_IPHONE -fexceptions -D_FORTIFY_SOURCE=0 -pthread -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=8"/>
+  <configure name="CODER_PATH" value="/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick/lib/ImageMagick-7.1.0/modules-Q8HDRI/coders"/>
+  <configure name="CONFIGURE_PATH" value="/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick/etc/ImageMagick-7/"/>
+  <configure name="CONFIGURE" value="./configure  'prefix=/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick' '--host=arm-apple-darwin' '--disable-opencl' '--disable-largefile' '--with-quantum-depth=8' '--with-magick-plus-plus' '--without-perl' '--without-x' '--disable-shared' '--disable-openmp' '--without-bzlib' '--without-freetype' 'host_alias=arm-apple-darwin' 'CC=/Applications/Xcode.app/Contents/Developer/usr/bin/gcc' 'CFLAGS=-arch arm64 -I/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/usr/include -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk -miphoneos-version-min=9.0 -O3 -fembed-bitcode -DTARGET_OS_IPHONE' 'LDFLAGS=-arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk -miphoneos-version-min=9.0 -L/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/jpeg_arm64_dylib/ -L/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/png_arm64_dylib/ -L/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/tiff_arm64_dylib/ -L/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/webp_arm64_dylib/ -L/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/raw_arm64_dylib/ -L/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs' 'CPPFLAGS=-I/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/include/jpeg -I/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/include/png -I/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/include/tiff -I/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/include/webp -I/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/include/raw -I/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick/include/ImageMagick-6' 'CXX=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++' 'CXXFLAGS=-arch arm64 -I/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/usr/include -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk -miphoneos-version-min=9.0 -miphoneos-version-min=9.0'"/>
+  <configure name="COPYRIGHT" value="Copyright (C) 1999-2021 ImageMagick Studio LLC"/>
+  <configure name="CPPFLAGS" value="-I/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick/include/ImageMagick-7"/>
+  <configure name="CXXFLAGS" value="-arch arm64 -I/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/usr/include -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk -miphoneos-version-min=9.0 -miphoneos-version-min=9.0 -pthread"/>
+  <configure name="CXX" value="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++"/>
+  <configure name="DEFS" value="-DHAVE_CONFIG_H"/>
+<!--  <configure name="DELEGATES" value="fontconfig lcms lzma openexr openjp2 png ps video webp xml zlib zstd"/>-->
+  <configure name="DELEGATES" value="bzlib fontconfig freetype jng jpeg lcms lzma openjp2 png tiff video webp xml zlib zstd"/>
+  <configure name="DISTCHECK_CONFIG_FLAGS" value="'CC=/Applications/Xcode.app/Contents/Developer/usr/bin/gcc' 'CFLAGS=-arch arm64 -I/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk/usr/include -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk -miphoneos-version-min=9.0 -O3 -fembed-bitcode -DTARGET_OS_IPHONE' 'CPPFLAGS=-I/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/include/jpeg -I/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/include/png -I/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/include/tiff -I/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/include/webp -I/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/include/raw -I/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick/include/ImageMagick-6' 'CXX=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++' 'LDFLAGS=-arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk -miphoneos-version-min=9.0 -L/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/jpeg_arm64_dylib/ -L/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/png_arm64_dylib/ -L/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/tiff_arm64_dylib/ -L/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/webp_arm64_dylib/ -L/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/raw_arm64_dylib/ -L/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs'  --disable-deprecated  --with-jemalloc=no  --with-umem=no  --with-bzlib=no  --with-autotrace=no  --with-fftw=no  --with-freetype=no  --with-gslib=no  --with-fontpath=  --with-jxl=no  --with-rsvg=no  --with-wmf=no  --with-perl=no "/>
+  <configure name="DOCUMENTATION_PATH" value="/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick/share/doc/ImageMagick-7"/>
+  <configure name="EXEC-PREFIX" value="/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick"/>
+  <configure name="EXECUTABLE_PATH" value="/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick/bin"/>
+  <configure name="FEATURES" value="DPC HDRI Cipher"/>
+  <configure name="FILTER_PATH" value="/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick/lib/ImageMagick-7.1.0/modules-Q8HDRI/filters"/>
+  <configure name="GIT_REVISION" value="18835:2f59f484f:20210625" />
+  <configure name="HOST" value="arm-apple-darwin"/>
+  <configure name="INCLUDE_PATH" value="/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick/include/ImageMagick-7"/>
+  <configure name="LDFLAGS" value="-L/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick/lib -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk -miphoneos-version-min=9.0 -L/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/jpeg_arm64_dylib/ -L/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/png_arm64_dylib/ -L/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/tiff_arm64_dylib/ -L/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/webp_arm64_dylib/ -L/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs/raw_arm64_dylib/ -L/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/im_libs"/>
+  <configure name="LIBRARY_PATH" value="/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick/lib/ImageMagick-7.1.0"/>
+  <configure name="LIBS" value="  -L/usr/local/Cellar/little-cms2/2.12/lib -llcms2        -L/usr/local/Cellar/libpng/1.6.37/lib -lpng16 -lz      -L/usr/local/Cellar/fontconfig/2.13.1/lib -L/usr/local/opt/freetype/lib -lfontconfig -lfreetype  -L/usr/local/Cellar/webp/1.2.0/lib -lwebpmux -lwebpdemux -lwebp -L/usr/local/Cellar/webp/1.2.0/lib -lwebp       -L/usr/local/Cellar/xz/5.2.5/lib -llzma  -L/usr/local/Cellar/openexr/3.0.3/lib -L/usr/local/Cellar/imath/3.0.3/lib -lOpenEXR-3_0 -lOpenEXRUtil-3_0 -lIex-3_0 -lIlmThread-3_0 -lImath-3_0 -L/usr/local/Cellar/openjpeg/2.4.0/lib -lopenjp2    -lxml2  -lz     -lm    -lpthread  "/>
+  <configure name="LIB_VERSION_NUMBER" value="7,1,0,3"/>
+  <configure name="LIB_VERSION" value="0x710"/>
+  <configure name="NAME" value="ImageMagick"/>
+  <configure name="PCFLAGS" value="-DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=8"/>
+  <configure name="PREFIX" value="/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick"/>
+  <configure name="QuantumDepth" value="8"/>
+  <configure name="RELEASE_DATE" value="2021-06-25"/>
+  <configure name="SHAREARCH_PATH" value="/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick/lib/ImageMagick-7.1.0/config-Q8HDRI"/>
+  <configure name="SHARE_PATH" value="/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick/share/ImageMagick-7"/>
+  <configure name="TARGET_CPU" value="arm"/>
+  <configure name="TARGET_OS" value="darwin"/>
+  <configure name="TARGET_VENDOR" value="apple"/>
+  <configure name="VERSION" value="7.1.0"/>
+  <configure name="WEBSITE" value="https://imagemagick.org"/>
+</configuremap>

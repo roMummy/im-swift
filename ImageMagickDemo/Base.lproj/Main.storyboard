@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment version="4352" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lbj-FC-gzf">
+                                <rect key="frame" x="0.0" y="317" width="414" height="205"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L2K-HH-3iW">
+                                <rect key="frame" x="0.0" y="88" width="414" height="173"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="原图" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dx8-CD-nsG">
+                                <rect key="frame" x="178" y="59" width="35" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="效果图" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAs-7a-Iss">
+                                <rect key="frame" x="178" y="288" width="52" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTS-pK-9tc">
+                                <rect key="frame" x="361" y="54" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="swift"/>
+                                <connections>
+                                    <segue destination="CiU-1b-zXY" kind="presentation" id="1Fq-er-TOd"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VbE-aM-a4E">
+                                <rect key="frame" x="0.0" y="530" width="414" height="201"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyu-hv-4ys">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9M-LB-aug">
+                                                <rect key="frame" x="16" y="89" width="31" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="漩涡"/>
+                                                <connections>
+                                                    <action selector="swirl:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1BV-uJ-yc1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jM-7N-sE4">
+                                                <rect key="frame" x="375" y="58" width="31" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="单色"/>
+                                                <connections>
+                                                    <action selector="monochromeClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dQf-VX-xaY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zt3-t8-KN7">
+                                                <rect key="frame" x="299" y="55" width="62" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="格式转换"/>
+                                                <connections>
+                                                    <action selector="convertClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zfa-kd-Vmf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Au4-lv-fGP">
+                                                <rect key="frame" x="245" y="56" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="缩略图"/>
+                                                <connections>
+                                                    <action selector="thumbnailClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wSp-A3-ced"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVt-ry-O3t">
+                                                <rect key="frame" x="175" y="57" width="62" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="高斯模糊"/>
+                                                <connections>
+                                                    <action selector="blurClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZCB-RJ-bhg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jrw-pN-18Z">
+                                                <rect key="frame" x="94" y="58" width="62" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="上下翻转"/>
+                                                <connections>
+                                                    <action selector="flipClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eCc-ve-1P1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6f9-3z-7lt">
+                                                <rect key="frame" x="269" y="29" width="62" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="左右翻转"/>
+                                                <connections>
+                                                    <action selector="flopClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YGu-wa-8BB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMQ-Sw-WSs">
+                                                <rect key="frame" x="47" y="58" width="31" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="反色"/>
+                                                <connections>
+                                                    <action selector="negateClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wgl-um-kwO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EpD-pR-wtJ">
+                                                <rect key="frame" x="8" y="58" width="31" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="噪声"/>
+                                                <connections>
+                                                    <action selector="noiseClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ROB-qV-WUZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bs3-WJ-WUV">
+                                                <rect key="frame" x="355" y="31" width="31" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="着色"/>
+                                                <connections>
+                                                    <action selector="colorizeClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0ho-xj-5Ze"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fB-jK-0EH">
+                                                <rect key="frame" x="192" y="31" width="62" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="内爆效果"/>
+                                                <connections>
+                                                    <action selector="implode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2SM-4s-hyk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0aJ-9g-IbD">
+                                                <rect key="frame" x="153" y="31" width="31" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="曝光"/>
+                                                <connections>
+                                                    <action selector="solarize:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eQF-ku-lPH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4X-qf-ow9">
+                                                <rect key="frame" x="94" y="30" width="31" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="扩散"/>
+                                                <connections>
+                                                    <action selector="spread:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8gz-jl-6jM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOO-Z8-Xdy">
+                                                <rect key="frame" x="16" y="31" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="马赛克"/>
+                                                <connections>
+                                                    <action selector="sample:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6ut-hF-TUy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cE7-sb-hS1">
+                                                <rect key="frame" x="286" y="0.0" width="62" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="图片拼接"/>
+                                                <connections>
+                                                    <action selector="append:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Xz-bL-tqy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ur-ja-PbN">
+                                                <rect key="frame" x="230" y="0.0" width="31" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="旋转"/>
+                                                <connections>
+                                                    <action selector="rotate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MSZ-fQ-zCB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Gu-U8-OrU">
+                                                <rect key="frame" x="162" y="-1" width="31" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="炭笔"/>
+                                                <connections>
+                                                    <action selector="charcoal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NvQ-F7-YCa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeV-EE-TaV">
+                                                <rect key="frame" x="367" y="0.0" width="31" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="凸起"/>
+                                                <connections>
+                                                    <action selector="raise:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9yI-4P-x8q"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSz-Yz-zCL">
+                                                <rect key="frame" x="78" y="-1" width="62" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="图片水印"/>
+                                                <connections>
+                                                    <action selector="imageMark:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NDz-rg-C7f"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5r9-mq-T3A">
+                                                <rect key="frame" x="8" y="0.0" width="62" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="文字水印"/>
+                                                <connections>
+                                                    <action selector="textMark:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sZD-1z-5bQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="td8-zr-mNd">
+                                                <rect key="frame" x="55" y="88" width="31" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="换装"/>
+                                                <connections>
+                                                    <action selector="cutout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7gq-sR-TOd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="ES2-Ae-efM"/>
+                                    <constraint firstItem="eYQ-a1-IU3" firstAttribute="bottom" secondItem="lyu-hv-4ys" secondAttribute="bottom" id="Pi8-c4-HeR"/>
+                                    <constraint firstItem="eYQ-a1-IU3" firstAttribute="trailing" secondItem="lyu-hv-4ys" secondAttribute="trailing" id="fZv-XY-FKa"/>
+                                    <constraint firstItem="lyu-hv-4ys" firstAttribute="leading" secondItem="eYQ-a1-IU3" secondAttribute="leading" id="tmK-2b-tpT"/>
+                                    <constraint firstItem="lyu-hv-4ys" firstAttribute="top" secondItem="eYQ-a1-IU3" secondAttribute="top" id="xDx-F4-159"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="VNa-9L-urm"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="eYQ-a1-IU3"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VbE-aM-a4E" secondAttribute="bottom" constant="5" id="0Nc-PU-PjQ"/>
+                            <constraint firstItem="VbE-aM-a4E" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5RJ-84-Ykv"/>
+                            <constraint firstItem="VbE-aM-a4E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PR1-tS-ZOF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="lbj-FC-gzf" id="ebW-bg-EKU"/>
+                        <outlet property="originalImageView" destination="L2K-HH-3iW" id="cUX-25-aal"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-184.05797101449278" y="118.20652173913044"/>
+        </scene>
+        <!--Test View Controller-->
+        <scene sceneID="fYe-kU-qPU">
+            <objects>
+                <viewController id="CiU-1b-zXY" customClass="TestViewController" customModule="ImageMagickDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tde-ZC-AlV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ngf-sd-4mw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="N0Q-zM-miI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7MJ-pa-wN6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="512" y="119"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

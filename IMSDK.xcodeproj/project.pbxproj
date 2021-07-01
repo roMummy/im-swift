@@ -212,6 +212,7 @@
 		EB1F6771268C6EAE00B2C43A /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1F66D1268C6EAD00B2C43A /* libjpeg.a */; };
 		EBA8DE05268D5EA800E02E45 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8DE04268D5EA800E02E45 /* File.swift */; };
 		EBA8DE0A268D68AF00E02E45 /* shirt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EBA8DE09268D68AF00E02E45 /* shirt.jpg */; };
+		EBA8DE14268DB3AF00E02E45 /* plane.avi in Resources */ = {isa = PBXBuildFile; fileRef = EBA8DE13268DB3AE00E02E45 /* plane.avi */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -452,6 +453,7 @@
 		EBA8DE04268D5EA800E02E45 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		EBA8DE09268D68AF00E02E45 /* shirt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shirt.jpg; sourceTree = "<group>"; };
 		EBA8DE0C268D6B8A00E02E45 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		EBA8DE13268DB3AE00E02E45 /* plane.avi */ = {isa = PBXFileReference; lastKnownFileType = video.avi; path = plane.avi; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -595,6 +597,7 @@
 		EB1F65FB268C644D00B2C43A /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				EBA8DE13268DB3AE00E02E45 /* plane.avi */,
 				EB1F65FC268C644D00B2C43A /* wizard.jpg */,
 				EB1F65FD268C644D00B2C43A /* bunny-mask-1.jpg */,
 				EB1F65FE268C644D00B2C43A /* bunny_anim.gif */,
@@ -1110,6 +1113,7 @@
 				EBA8DE0A268D68AF00E02E45 /* shirt.jpg in Resources */,
 				EB1F6606268C644D00B2C43A /* a010013l.afm in Resources */,
 				EB1F660C268C644D00B2C43A /* barcelona.jpg in Resources */,
+				EBA8DE14268DB3AF00E02E45 /* plane.avi in Resources */,
 				EB1F6607268C644D00B2C43A /* a010013l.pfb in Resources */,
 				EB1F660A268C644D00B2C43A /* bunny-mask-1.jpg in Resources */,
 				EB1F660E268C644D00B2C43A /* logo.jpg in Resources */,

@@ -46,37 +46,6 @@
     
     self.originalImageView.image = [UIImage imageWithContentsOfFile:_inputPath];
     
-//    NSString * imagePath = [[NSBundle mainBundle] pathForResource:@"logo" ofType:@"jpg"];
-//    ImageMagickEngine *engine = [[ImageMagickEngine alloc] init];
-////    [engine im_transformatWithSourcePath:inputPath destPath:outputPath];
-//    [engine im_addWatermarkImage:imagePath inputPath:inputPath outputPath:outputPath];
-//    [engine im_addWatermarkText:@"aaa" inputPath:inputPath outputPath:outputPath];
-//    [engine im_cropImageCutWithSourcePath:inputPath destPath:outputPath pointX:50 pointY:50 width:20 height:20];
-    
-//    [self gifToJpg:inputPath outputPath:outputPath];
-//    test_wand(outputPath.UTF8String);
-//    [self test:inputPath outputPath:outputPath];
-//    [self gifToJpg:inputPath outputPath:outputPath];
-//    [self reflectionImage:inputPath outputPath:outputPath];
-//    NSString * animPath = [[NSBundle mainBundle] pathForResource:@"bunny_anim" ofType:@"gif"];
-//    NSString * bgPath = [[NSBundle mainBundle] pathForResource:@"bunny_grass" ofType:@"gif"];
-//    NSString * outputPath = [NSTemporaryDirectory() stringByAppendingString:@"output.gif"];
-//    [self addStaticBackgroundToFrameAnimation:animPath bgPath:bgPath outputPath:outputPath];
-//    [self addCanvas:inputPath outputPath:outputPath];
-//    [self image2DTo3D:inputPath outputPath:outputPath];
-//    [self transparent:inputPath outputPath:outputPath];
-//    [self getFileInfo:inputPath];
-//    [self resize:inputPath outputPath:outputPath];
-//    [self conver:inputPath outputPath:outputPath];
-    
-//    NSData *imageData = [self watermark:inputPath outputPath:outputPath text:@"12312213"];
-//    NSData *imageData = [self draw:outputPath];
-//    NSString * animPath = [[NSBundle mainBundle] pathForResource:@"bunny_anim" ofType:@"gif"];
-//    NSString * bgPath = [[NSBundle mainBundle] pathForResource:@"bunny_grass" ofType:@"gif"];
-//    NSString * outputPath = [NSTemporaryDirectory() stringByAppendingString:@"output.gif"];
-//    NSData * imageData = [self addStaticBackgroundToFrameAnimation:animPath bgPath:bgPath outputPath:outputPath];
-//    self.imageView.image = [UIImage imageWithData:imageData];
-    
     
     
     NSLog(@"--output");
@@ -107,7 +76,8 @@
 }
 
 - (IBAction)thumbnailClick:(id)sender {
-    NSString *cmds = [NSString stringWithFormat:@"convert -resize 50%%x50%% %@ %@",self.inputPath, self.outputPath];
+    NSString *cmds = [NSString stringWithFormat:@" convert %@ -bordercolor snow -background black +polaroid \
+                      %@",self.inputPath, self.outputPath];
     IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
@@ -235,6 +205,52 @@
     IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds3];
     [self handleResult:result];
 }
+/// 油画效果
+- (IBAction)paint:(id)sender {
+    NSString *cmds = [NSString stringWithFormat:@"convert %@  -paint 5   %@",self.inputPath, self.outputPath];
+    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    [self handleResult:result];
+}
+/// 铅笔
+- (IBAction)sketch:(id)sender {
+    NSString *cmds = [NSString stringWithFormat:@"convert %@   -colorspace gray -sketch 0x10+120   %@",self.inputPath, self.outputPath];
+    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    [self handleResult:result];
+}
+/// 网格化
+- (IBAction)reseau:(id)sender {
+    NSString *cmds = [NSString stringWithFormat:@"  convert %@ -background SkyBlue \
+                      -crop 10x0 +repage -splice 3x0 +append \
+                      -crop 0x10 +repage -splice 0x3 -append \
+                      %@",self.inputPath, self.outputPath];
+    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    [self handleResult:result];
+}
+/// 边缘检测
+- (IBAction)edge:(id)sender {
+    // convert rose:              -canny 0x1+10%+30%  rose_canny.gif
+    NSString *cmds = [NSString stringWithFormat:@" convert %@ -colorspace Gray \
+                      -negate -edge 1 -negate    %@",self.inputPath, self.outputPath];
+    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    [self handleResult:result];
+}
+/// 反射
+- (IBAction)reflection:(id)sender {
+    
+    NSString *cmds = [NSString stringWithFormat:@"convert %@ -alpha on \
+                     ( +clone -flip -channel A -evaluate multiply .35 +channel )  -append \
+                      -size 200x700 xc:black +swap \
+                      -gravity North -geometry +0+5 -composite  %@",self.inputPath, self.outputPath];
+    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    [self handleResult:result];
+}
+/// 设置dpi
+- (IBAction)density:(id)sender {
+    NSString *cmds = [NSString stringWithFormat:@"convert -density 100  %@ %@",self.inputPath, self.outputPath];
+    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    [self handleResult:result];
+}
+
 
 
 

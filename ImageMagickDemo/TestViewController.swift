@@ -5,10 +5,9 @@
 //  Created by FSKJ on 2021/6/26.
 //
 
-import UIKit
 import IMSDK
 import Magick
-
+import UIKit
 
 class TestViewController: UIViewController {
     override func viewDidLoad() {
@@ -22,10 +21,10 @@ class TestViewController: UIViewController {
         guard let path = inputPath else {
             return
         }
-        let cmd = """
-                convert \
-                   -size 50x50 xc:none  -font OpenSans-Regular -gravity center -annotate +0+0 "A B C" \(outputPath)
-                """
+//        let cmd = """
+//                convert \
+//                   -size 50x50 xc:none  -font OpenSans-Regular -gravity center -annotate +0+0 "A B C" \(outputPath)
+//                """
 
 //        let cmd = """
 //                convert \
@@ -38,7 +37,7 @@ class TestViewController: UIViewController {
 //        let cmd = """
 //        convert -paint 4 \(inputPath!) \(outputPath)
 //        """
-        
+
 //
 //        let cmd = """
 //                composite  -dissolve 15 -tile \
@@ -62,25 +61,34 @@ class TestViewController: UIViewController {
 //        case let .failure(error):
 //            print("error - ", error.localizedDescription)
 //        }
-        
+
 //        let result = IMHelper.shared.addWatermark(mark: markPath!, inputPath: inputPath!, outputPath: outputPath)
 //        let result = IMHelper.shared.crop(image: inputPath!, size: CGSize(width: 100, height: 30), point: CGPoint(x: 0, y: 0), outputPath: outputPath)
-       
+
+
+//
+        
+        let cmd1 = """
+                convert -density 90 \(inputPath!) \(outputPath)
+                """
+        _ = IMHelper.shared.cliConvert(cmds: cmd1)
+        
+        let cmd = """
+                identify \(outputPath)
+                """
+        let result = IMHelper.shared.cliIdentify(cmds: cmd)
+        
         var font: Int8 = 0
-        
-        let result = IMHelper.shared.cliConvert(cmds: cmd)
-        
         var number: size_t = 0
         MagickQueryFonts(&font, &number)
         print(number)
-        
+
         print("----")
-                    
+
         if result.status == .success {
             print("success")
         } else {
             print("fail - \(result.errorMsg ?? "")")
         }
-        
     }
 }

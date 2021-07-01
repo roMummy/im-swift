@@ -7,11 +7,15 @@
 
 import Foundation
 import UIKit
+import Magick
 
 public class IMHelper: NSObject {
     @objc
     public static let shared = IMHelper()
     override private init() {
+        let version = GetMagickVersion(nil)
+        print("[IM] version - \(String(cString: version!))")
+        
         // 设置配置文件路径
         let mainPath = Bundle.init(for: Self.self).resourcePath
         if let path = mainPath {
@@ -121,7 +125,7 @@ public class IMHelper: NSObject {
 
     /// mogrify 命令
     @objc
-    public func cilMogrify(cmds: String) -> IMResult {
+    public func cliMogrify(cmds: String) -> IMResult {
         return IMMogrifyCommand(cmds: cmds).execute().transformIMResult()
     }
 

@@ -221,6 +221,54 @@
                                                     <action selector="cutout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7gq-sR-TOd"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jow-uG-UkN">
+                                                <rect key="frame" x="102" y="89" width="31" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="油画"/>
+                                                <connections>
+                                                    <action selector="paint:" destination="BYZ-38-t0r" eventType="touchUpInside" id="koB-vp-Zel"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nD0-QK-opT">
+                                                <rect key="frame" x="153" y="89" width="31" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="铅笔"/>
+                                                <connections>
+                                                    <action selector="sketch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xk8-Ba-i2I"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWg-Ux-XRR">
+                                                <rect key="frame" x="208" y="89" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="网格化"/>
+                                                <connections>
+                                                    <action selector="reseau:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lrJ-i7-3O0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5p1-Ps-oJe">
+                                                <rect key="frame" x="261" y="88" width="62" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="边缘检测"/>
+                                                <connections>
+                                                    <action selector="edge:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R64-sX-FhL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZz-Km-Uw6">
+                                                <rect key="frame" x="346" y="87" width="31" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="反射"/>
+                                                <connections>
+                                                    <action selector="reflection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="luW-u7-FFV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZJ-hJ-BqP">
+                                                <rect key="frame" x="9" y="127" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="dpi"/>
+                                                <connections>
+                                                    <action selector="density:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lzs-tu-OUH"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>

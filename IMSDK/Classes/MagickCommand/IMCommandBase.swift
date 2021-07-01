@@ -16,7 +16,7 @@ class IMCommandBase: IMCommand {
     var args: [UnsafeMutablePointer<Int8>?]
     
     required init(cmds: String) {
-        let cmdList = IMTool.split(str: cmds, filters: ["\"", "'","(",")"], whereSeparator: " ")
+        let cmdList = IMTool.split(str: cmds, filters: ["\"", "'"], whereSeparator: " ")
 
         self.params = cmdList
         self.imageInfo = IMImageInfo()

@@ -106,6 +106,19 @@ public class IMHelper: NSObject {
             """
         return cliConvert(cmds:cmds)
     }
+    /// 模糊操作，可以抠图
+    /// bgColor - 透明背景
+    /// toColor - 色差颜色
+    @objc
+    public func fuzz(bgColor: UIColor, toColor: UIColor, inputPath: String, outputPath: String) -> IMResult {
+        let fuzz = IMTool.fuzz(fromColor: bgColor, toColor: toColor)
+        
+        let cmds =
+            """
+                magick -debug all -fuzz \(fuzz)%  -transparent #\(bgColor.hexString) \(inputPath) \(outputPath)
+            """
+        return cliConvert(cmds:cmds)
+    }
     
     // MARK: - CLI
     // https://imagemagick.org/script/command-line-processing.php
@@ -113,18 +126,21 @@ public class IMHelper: NSObject {
     /// convert 命令
     /// eg: 'convert rose.jpg -resize 50% rose.png'
     @objc
+    @discardableResult
     public func cliConvert(cmds: String) -> IMResult {
         return IMConvertCommand(cmds: cmds).execute().transformIMResult()
     }
 
     /// identify 命令
     @objc
+    @discardableResult
     public func cliIdentify(cmds: String) -> IMResult {
         return IMIdentifyCommand(cmds: cmds).execute().transformIMResult()
     }
 
     /// mogrify 命令
     @objc
+    @discardableResult
     public func cliMogrify(cmds: String) -> IMResult {
         return IMMogrifyCommand(cmds: cmds).execute().transformIMResult()
     }
@@ -132,6 +148,7 @@ public class IMHelper: NSObject {
     /// composite 命令
     /// ps: "composite -gravity center smile.gif  rose: rose-over.png"
     @objc
+    @discardableResult
     public func cliComposite(cmds: String) -> IMResult {
         return IMCompositeCommand(cmds: cmds).execute().transformIMResult()
     }
@@ -144,36 +161,42 @@ public class IMHelper: NSObject {
 
     /// conjure 命令
     @objc
+    @discardableResult
     public func cliConjure(cmds: String) -> IMResult {
         return IMConjureCommand(cmds: cmds).execute().transformIMResult()
     }
 
     /// stream 命令
     @objc
+    @discardableResult
     public func cliStream(cmds: String) -> IMResult {
         return IMStreamCommand(cmds: cmds).execute().transformIMResult()
     }
 
     /// `import` 命令
     @objc
+    @discardableResult
     public func cliImport(cmds: String) -> IMResult {
         return IMImportCommand(cmds: cmds).execute().transformIMResult()
     }
 
     /// display 命令
     @objc
+    @discardableResult
     public func cliDisplay(cmds: String) -> IMResult {
         return IMDisplayCommand(cmds: cmds).execute().transformIMResult()
     }
 
     /// animate 命令
     @objc
+    @discardableResult
     public func cliAnimate(cmds: String) -> IMResult {
         return IMAnimateCommand(cmds: cmds).execute().transformIMResult()
     }
 
     /// montage 命令
     @objc
+    @discardableResult
     public func cliMontage(cmds: String) -> IMResult {
         return IMMontageCommand(cmds: cmds).execute().transformIMResult()
     }

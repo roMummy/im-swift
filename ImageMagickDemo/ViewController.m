@@ -9,6 +9,8 @@
 
 #import "IMSDK.h"
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1]
+
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIImageView *originalImageView;
@@ -37,7 +39,7 @@
 //
     
     self.inputPath = [[NSBundle mainBundle] pathForResource:@"shirt" ofType:@"jpg"];
-    self.outputPath = [NSTemporaryDirectory() stringByAppendingString:@"output.jpg"];
+    self.outputPath = [NSTemporaryDirectory() stringByAppendingString:@"output.png"];
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:self.outputPath]) {
         [[NSFileManager defaultManager] removeItemAtPath:self.outputPath error:nil];
@@ -143,7 +145,7 @@
 
 - (IBAction)append:(id)sender {
     NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"logo" ofType:@"jpg"];
-    NSString *cmds = [NSString stringWithFormat:@"convert %@ %@ -append %@",self.inputPath, imagePath, self.outputPath];
+    NSString *cmds = [NSString stringWithFormat:@"convert %@ %@ +append %@",self.inputPath, imagePath, self.outputPath];
     IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
@@ -185,7 +187,7 @@
     IMResult *result = [IMHelper.shared addWatermarkWithText:@"啦啦啦" textColor:[UIColor blackColor] inputPath:self.inputPath outputPath:self.outputPath];
     [self handleResult:result];
 }
-
+/// 换装
 - (IBAction)cutout:(id)sender {
 //    self.inputPath = [NSBundle.mainBundle pathForResource:@"shirt" ofType:@"jpg"];
     NSString *cmds1 = [NSString stringWithFormat:@"convert %@ -colorspace HSL -channel Hue -separate %@",self.inputPath, self.outputPath];
@@ -228,7 +230,7 @@
 }
 /// 边缘检测
 - (IBAction)edge:(id)sender {
-    // convert rose:              -canny 0x1+10%+30%  rose_canny.gif
+//     convert rose:              -canny 0x1+10%+30%  rose_canny.gif
     NSString *cmds = [NSString stringWithFormat:@" convert %@ -colorspace Gray \
                       -negate -edge 1 -negate    %@",self.inputPath, self.outputPath];
     IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
@@ -251,6 +253,17 @@
     [self handleResult:result];
 }
 
+/// 简单抠图
+- (IBAction)ps:(id)sender {
+
+//    NSString *cmds = [NSString stringWithFormat:@"magick -debug all %@ -fuzz 7%%  -transparent #888888   %@",, self.outputPath];
+//    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+//    [self handleResult:result];
+    
+    IMResult *result = [IMHelper.shared fuzzWithBgColor:UIColorFromRGB(0x888888) toColor:UIColorFromRGB(0x777777) inputPath:self.inputPath outputPath:self.outputPath];
+   
+    [self handleResult:result];
+}
 
 
 

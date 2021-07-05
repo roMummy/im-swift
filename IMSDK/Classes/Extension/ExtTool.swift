@@ -33,7 +33,6 @@ extension String {
         return strdup(self)
     }
 
-    
     /// 文字转图片
     /// - Parameters:
     ///   - textColor: 字体颜色
@@ -41,7 +40,7 @@ extension String {
     ///   - bgColor: 背景颜色
     ///   - scale: 缩放 默认不缩放
     ///   - font: 字体
-    /// - Returns: 图片  
+    /// - Returns: 图片
     func toImage(textColor: UIColor = .black, font: UIFont = .systemFont(ofSize: 12), opaque: Bool = true, bgColor: UIColor = .white, scale: CGFloat = 0) -> UIImage? {
         let label = UILabel()
         label.text = self
@@ -80,5 +79,50 @@ extension Result where Success == ImageCommandResult, Failure == IMExceptionInfo
             result.errorMsg = err.localizedDescription
         }
         return result
+    }
+}
+
+extension UIColor {
+    convenience init(hex: Int) {
+        let components = (
+            R: CGFloat((hex >> 16) & 0xFF) / 255,
+            G: CGFloat((hex >> 08) & 0xFF) / 255,
+            B: CGFloat((hex >> 00) & 0xFF) / 255
+        )
+        self.init(red: components.R, green: components.G, blue: components.B, alpha: 1)
+    }
+    
+    var hexString: String {
+        var r: CGFloat = 0
+        var g: CGFloat = 0
+        var b: CGFloat = 0
+        var a: CGFloat = 0
+        self.getRed(&r, green: &g, blue: &b, alpha: &a)
+        return String(
+            format: "%02X%02X%02X",
+            Int(r * 0xff),
+            Int(g * 0xff),
+            Int(b * 0xff))
+      }
+
+    var r: CGFloat {
+        let ciColor = CIColor(color: self)
+        return ciColor.red
+    }
+    
+    var g: CGFloat {
+        let ciColor = CIColor(color: self)
+        return ciColor.green
+    }
+    
+    var b: CGFloat {
+        let ciColor = CIColor(color: self)
+        
+        return ciColor.blue
+    }
+    
+    var a: CGFloat {
+        let ciColor = CIColor(color: self)
+        return ciColor.alpha
     }
 }

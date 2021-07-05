@@ -51,8 +51,6 @@ ImageMagick: 7.1.0-0 Q8 arm 2021-06-02 https://imagemagick.org
 
 > API: https://imagemagick.org/api/Magick++/index.html
 
-
-
 * 格式转换
 
   ```swift
@@ -118,6 +116,10 @@ ImageMagick: 7.1.0-0 Q8 arm 2021-06-02 https://imagemagick.org
 
 参考https://imagemagick.org/script/command-line-tools.php
 
+##### Magick
+
+等于 `convert`命令
+
 ##### [Convert](https://legacy.imagemagick.org/script/convert.php)
 
 在图像格式之间转换以及调整图像大小、模糊、裁剪、去斑、抖动、绘制、翻转、连接、重新采样等等。
@@ -126,8 +128,47 @@ ImageMagick: 7.1.0-0 Q8 arm 2021-06-02 https://imagemagick.org
 
   ```shell
   convert rose.jpg rose.png
-  # gif转jpg 会生成图片数组（rose-0.png、rose-1.png）
   ```
+
+   gif转jpg 会生成图片数组（frame-0.jpg, frame-1.jpg, frame-2.jpg ...）
+
+  ```
+  convert -coalesce  rain.gif  frame.jpg
+  # -coalesce：根据图像 -dispose 元数据的设置覆盖图像序列中的每个图像，以重现动画序列中每个点的动画效果。
+  ```
+
+  如果想使用下划线作为符号，输出为 `frame_0.jpg, frame_1.jpg, frame_2.jpg ...`，则可以如下设置。
+
+  ```
+  convert  -coalesce  rain.gif  frame_%d.jpg
+  ```
+
+  如果只想拿到 GIF 的第一帧，可以这样设置。
+
+  ```
+  convert  -coalesce  'rain.gif[0]'  first_frame.jpg
+  ```
+
+  拿到某些帧，如同 `-clone` 的写法。
+
+  ```
+  convert  -coalesce  'rain.gif[0-2]'  some_frames_%d.jpg
+  ```
+
+- 缩放
+
+  ```
+  convert -resize '150x100!' goods.jpg thumbnail.jpg
+  ```
+
+- 设置质量
+
+  ```
+  # 0 - 100
+  convert -quality 70 -strip goods.jpg thumbnail.jpg
+  ```
+
+  
 
 - 油画
 
@@ -197,7 +238,22 @@ ImageMagick: 7.1.0-0 Q8 arm 2021-06-02 https://imagemagick.org
 
   
 
-- 
+- 拼图
+
+  ```
+  convert input1.jpg input2.jpg +append output.jpg
+  #+append 水平连接
+  #-append 垂直连接
+  ```
+
+- ps
+
+  ```
+  # -fuzz 色差 -transparent 透明
+  convert -fuzz 7%  -transparent #888888  input.jpg output.png
+  ```
+
+  
 
 
 
@@ -207,11 +263,13 @@ ImageMagick: 7.1.0-0 Q8 arm 2021-06-02 https://imagemagick.org
 
 #### [Mogrify](https://legacy.imagemagick.org/script/mogrify.php)
 
-convert的批量处理命令
+convert的批量处理命令，不需要指定输出文件，自动覆盖原始图像文件。
 
 #### [Composite](https://legacy.imagemagick.org/script/composite.php)
 
 “ `composite`”命令专为以各种方式将两个图像简单地合成（叠加）在一起而设计。这包括限制图像组合在一起的区域，尽管使用第三个掩蔽图像。
+
+
 
 #### [Montage](https://legacy.imagemagick.org/script/montage.php)
 
@@ -267,6 +325,22 @@ compare bag_frame1.gif bag_frame2.gif  compare.gif
 从屏幕显示中读取图像
 
 
+
+#### 注意
+
+- 如果是使用颜色，比如 
+
+  ```shell
+  convert t0NeV0C.png -fuzz 20% -opaque '#888888' result.png
+  ```
+
+  不要使用`'#888888'` ,直接使用 `#888888` ,不然颜色不会被识别
+
+  ```shell
+  convert t0NeV0C.png -fuzz 20% -opaque #888888 result.png
+  ```
+
+  
 
 #### TODO
 

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import UIKit.UIColor
 
 struct IMTool {
     
@@ -36,5 +36,20 @@ struct IMTool {
         }
         
         return result.map{"\($0)"}
+    }
+    /// fuzz 算法
+    static func fuzz(fromColor: UIColor, toColor: UIColor) -> CGFloat {
+        /*"%[fx:(100)*sqrt( ( (u.r-v.r)^2 +
+                                (u.g-v.g)^2 +
+                                (u.b-v.b)^2 )*u.a*v.a/3   + (u.a-v.a)^2  )  ]%%" */
+        
+        let dr = fromColor.r - toColor.r
+        let dg = fromColor.g - toColor.g
+        let db = fromColor.b - toColor.b
+        let da = fromColor.a - toColor.a
+        
+        let t = sqrt((dr*dr + dg*dg + db*db)/3 + da*da)
+        
+        return t * 100
     }
 }

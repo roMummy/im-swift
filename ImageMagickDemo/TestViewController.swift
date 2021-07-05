@@ -29,7 +29,7 @@ class TestViewController: UIViewController {
 //        let cmd = """
 //                convert \
 //                -debug draw \
-//                   -size 50x50 xc:none -font none -gravity center -annotate +0+0 "ABC" \(outputPath)
+//                   -size 50x50 xc:none -font OpenSans-Regular -gravity center -annotate +0+0 ABC \(outputPath)
 //                """
 //        let cmd = """
 //                montage -background 'red' -geometry +4+4 \(inputPath!) \(markPath!) \(outputPath)
@@ -68,15 +68,19 @@ class TestViewController: UIViewController {
 
 //
         
-        let cmd1 = """
-                convert -density 90 \(inputPath!) \(outputPath)
-                """
-        _ = IMHelper.shared.cliConvert(cmds: cmd1)
+//        let cmd1 = ####"""
+//                convert -density 90 '#999999' \####(inputPath!) \####(outputPath)
+//                """####
+//        _ = IMHelper.shared.cliConvert(cmds: cmd1)
+//
+//        let cmd = """
+//                identify \(outputPath)
+//                """
         
         let cmd = """
-                identify \(outputPath)
+                convert -list configure
                 """
-        let result = IMHelper.shared.cliIdentify(cmds: cmd)
+        let result = IMHelper.shared.cliConvert(cmds: cmd)
         
         var font: Int8 = 0
         var number: size_t = 0

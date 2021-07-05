@@ -269,6 +269,14 @@
                                                     <action selector="density:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lzs-tu-OUH"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMG-vN-DMh">
+                                                <rect key="frame" x="63" y="127" width="31" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="抠图"/>
+                                                <connections>
+                                                    <action selector="ps:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bcj-6G-rwk"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>

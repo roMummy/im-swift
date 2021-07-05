@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -1013,6 +1013,7 @@
 				EB1F6139268C528A00B2C43A /* Sources */,
 				EB1F613A268C528A00B2C43A /* Frameworks */,
 				EB1F613B268C528A00B2C43A /* Resources */,
+				EBCBE9542692AEAD00812C36 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1130,6 +1131,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EBCBE9542692AEAD00812C36 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#要build的target名\nTARGET_NAME=${PROJECT_NAME}\n\n# 输出路径\nINSTALL_DIR=${SRCROOT}/Products/\n\n# framework 形式真机架构输出文件路径\nDEVICE_DIR=${BUILD_DIR}/${CONFIGURATION}-iphoneos/${TARGET_NAME}.framework\n\ncp -R \"${DEVICE_DIR}\" \"${INSTALL_DIR}\"\n\nopen ${SRCROOT}/Products\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EB1F6139268C528A00B2C43A /* Sources */ = {

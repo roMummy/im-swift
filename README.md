@@ -19,10 +19,6 @@ ImageMagick: 7.1.0-0 Q8 arm 2021-06-02 https://imagemagick.org
 
 #### 安装
 
-* cocoapods
-
-  > pod 'ImageMagick', '~> 6.8.8-9'
-
 * 源码导入
 
   > 1、直接拖入iOSMagick-6.8.8-9-libs文件夹

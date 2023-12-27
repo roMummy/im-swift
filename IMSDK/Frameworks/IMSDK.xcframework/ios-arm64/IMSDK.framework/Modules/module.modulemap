@@ -1,0 +1,11 @@
+framework module IMSDK {
+  umbrella header "IMSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module IMSDK.Swift {
+  header "IMSDK-Swift.h"
+  requires objc
+}

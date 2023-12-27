@@ -7,7 +7,7 @@
 
 #import "ViewController.h"
 
-#import "IMSDK.h"
+#import <IMSDK/IMSDK-Swift.h>
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1]
 
@@ -56,6 +56,10 @@
 }
 
 - (void)handleResult:(IMResult *)result {
+    [IMCore.shared setProgressBlock:^(float value) {
+        NSLog(@"进度 --- %f", value);
+    }];
+    
     if (result.status == StatusSuccess) {
         NSLog(@"success");
         self.imageView.image = [UIImage imageWithContentsOfFile:self.outputPath];
@@ -66,157 +70,157 @@
 
 - (IBAction)monochromeClick:(id)sender {
     NSString *cmds = [NSString stringWithFormat:@"convert -monochrome %@ %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 
 - (IBAction)convertClick:(id)sender {
 //    self.outputPath = [NSTemporaryDirectory() stringByAppendingString:@"output.pdf"];
     NSString *cmds = [NSString stringWithFormat:@"convert %@ %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 
 - (IBAction)thumbnailClick:(id)sender {
     NSString *cmds = [NSString stringWithFormat:@" convert %@ -bordercolor snow -background black +polaroid \
                       %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 
 - (IBAction)blurClick:(id)sender {
     NSString *cmds = [NSString stringWithFormat:@"convert -blur 80 %@ %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 
 - (IBAction)flipClick:(id)sender {
     NSString *cmds = [NSString stringWithFormat:@"convert -flip %@ %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 
 - (IBAction)flopClick:(id)sender {
     NSString *cmds = [NSString stringWithFormat:@"convert -flop %@ %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 - (IBAction)negateClick:(id)sender {
     NSString *cmds = [NSString stringWithFormat:@"convert -negate %@ %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 
 - (IBAction)noiseClick:(id)sender {
     NSString *cmds = [NSString stringWithFormat:@"convert -noise 3 %@ %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 
 - (IBAction)colorizeClick:(id)sender {
     NSString *cmds = [NSString stringWithFormat:@"convert -colorize 255 %@ %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 
 - (IBAction)implode:(id)sender {
     NSString *cmds = [NSString stringWithFormat:@"convert -implode 1 %@ %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 
 - (IBAction)solarize:(id)sender {
     NSString *cmds = [NSString stringWithFormat:@"convert -solarize 42 %@ %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 
 - (IBAction)spread:(id)sender {
     NSString *cmds = [NSString stringWithFormat:@"convert -spread 5 %@ %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 
 - (IBAction)sample:(id)sender {
     NSString *cmds = [NSString stringWithFormat:@"convert -sample 10%% -sample 1000%%  %@ %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 
 - (IBAction)append:(id)sender {
     NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"logo" ofType:@"jpg"];
     NSString *cmds = [NSString stringWithFormat:@"convert %@ %@ +append %@",self.inputPath, imagePath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 
 
 - (IBAction)rotate:(id)sender {
     NSString *cmds = [NSString stringWithFormat:@"convert -rotate 30  %@ %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 
 
 - (IBAction)charcoal:(id)sender {
     NSString *cmds = [NSString stringWithFormat:@"convert -charcoal 2  %@ %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 
 - (IBAction)swirl:(id)sender {
     NSString *cmds = [NSString stringWithFormat:@"convert -swirl 67  %@ %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 
 
 - (IBAction)raise:(id)sender {
     NSString *cmds = [NSString stringWithFormat:@"convert -raise 5x5  %@ %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 
 - (IBAction)imageMark:(id)sender {
     NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"logo" ofType:@"jpg"];
-    IMResult *result = [IMHelper.shared addWatermarkWithMark:imagePath inputPath:self.inputPath outputPath:self.outputPath];
+    IMResult *result = [IMCore.shared addWatermarkWithMark:imagePath inputPath:self.inputPath outputPath:self.outputPath];
     [self handleResult:result];
 }
 
 - (IBAction)textMark:(id)sender {
-    IMResult *result = [IMHelper.shared addWatermarkWithText:@"啦啦啦" textColor:[UIColor blackColor] inputPath:self.inputPath outputPath:self.outputPath];
+    IMResult *result = [IMCore.shared addWatermarkWithText:@"啦啦啦" textColor:[UIColor blackColor] inputPath:self.inputPath outputPath:self.outputPath];
     [self handleResult:result];
 }
 /// 换装
 - (IBAction)cutout:(id)sender {
 //    self.inputPath = [NSBundle.mainBundle pathForResource:@"shirt" ofType:@"jpg"];
     NSString *cmds1 = [NSString stringWithFormat:@"convert %@ -colorspace HSL -channel Hue -separate %@",self.inputPath, self.outputPath];
-    
-    [IMHelper.shared cliConvertWithCmds:cmds1];
-    
+
+    [IMCore.shared cliConvertWithCmds:cmds1];
+
     NSString *shirt_mask = self.outputPath;
-    
+
     NSString *cmds2 = [NSString stringWithFormat:@"convert %@ -morphology Smooth Square \
                        -negate %@",shirt_mask, self.outputPath];
-    [IMHelper.shared cliConvertWithCmds:cmds2];
-    
+    [IMCore.shared cliConvertWithCmds:cmds2];
+
     NSString *shirt_write_mask = self.outputPath;
-    
+
     NSString *cmds3 = [NSString stringWithFormat:@"convert %@ -mask %@ \
                        -modulate 100,100,25    +mask %@",self.inputPath, shirt_write_mask, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds3];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds3];
     [self handleResult:result];
 }
 /// 油画效果
 - (IBAction)paint:(id)sender {
     NSString *cmds = [NSString stringWithFormat:@"convert %@  -paint 5   %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 /// 铅笔
 - (IBAction)sketch:(id)sender {
     NSString *cmds = [NSString stringWithFormat:@"convert %@   -colorspace gray -sketch 0x10+120   %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 /// 网格化
@@ -225,7 +229,7 @@
                       -crop 10x0 +repage -splice 3x0 +append \
                       -crop 0x10 +repage -splice 0x3 -append \
                       %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 /// 边缘检测
@@ -233,23 +237,23 @@
 //     convert rose:              -canny 0x1+10%+30%  rose_canny.gif
     NSString *cmds = [NSString stringWithFormat:@" convert %@ -colorspace Gray \
                       -negate -edge 1 -negate    %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 /// 反射
 - (IBAction)reflection:(id)sender {
-    
+
     NSString *cmds = [NSString stringWithFormat:@"convert %@ -alpha on \
                      ( +clone -flip -channel A -evaluate multiply .35 +channel )  -append \
                       -size 200x700 xc:black +swap \
                       -gravity North -geometry +0+5 -composite  %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 /// 设置dpi
 - (IBAction)density:(id)sender {
     NSString *cmds = [NSString stringWithFormat:@"convert -density 100  %@ %@",self.inputPath, self.outputPath];
-    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
     [self handleResult:result];
 }
 
@@ -257,11 +261,11 @@
 - (IBAction)ps:(id)sender {
 
 //    NSString *cmds = [NSString stringWithFormat:@"magick -debug all %@ -fuzz 7%%  -transparent #888888   %@",, self.outputPath];
-//    IMResult *result = [IMHelper.shared cliConvertWithCmds:cmds];
+//    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
 //    [self handleResult:result];
-    
-    IMResult *result = [IMHelper.shared fuzzWithBgColor:UIColorFromRGB(0x888888) toColor:UIColorFromRGB(0x777777) inputPath:self.inputPath outputPath:self.outputPath];
-   
+
+    IMResult *result = [IMCore.shared fuzzWithBgColor:UIColorFromRGB(0x888888) toColor:UIColorFromRGB(0x777777) inputPath:self.inputPath outputPath:self.outputPath];
+
     [self handleResult:result];
 }
 

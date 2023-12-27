@@ -6,7 +6,6 @@
 //
 
 import IMSDK
-import Magick
 import UIKit
 
 class TestViewController: UIViewController {
@@ -71,7 +70,7 @@ class TestViewController: UIViewController {
 //        let cmd1 = ####"""
 //                convert -density 90 '#999999' \####(inputPath!) \####(outputPath)
 //                """####
-//        _ = IMHelper.shared.cliConvert(cmds: cmd1)
+//        _ = IMCore.shared.cliConvert(cmds: cmd1)
 //
 //        let cmd = """
 //                identify \(outputPath)
@@ -80,12 +79,12 @@ class TestViewController: UIViewController {
         let cmd = """
                 convert -list configure
                 """
-        let result = IMHelper.shared.cliConvert(cmds: cmd)
-        
-        var font: Int8 = 0
-        var number: size_t = 0
-        MagickQueryFonts(&font, &number)
-        print(number)
+        let result = IMCore.shared.cliConvert(cmds: cmd)
+
+//        var font: Int8 = 0
+//        var number: size_t = 0
+//        MagickQueryFonts(&font, &number)
+//        print(number)
 
         print("----")
 

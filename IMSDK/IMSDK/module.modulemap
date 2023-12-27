@@ -1,0 +1,5 @@
+module Magick [system] {
+    header "./Classes/Lib/ImageMagick/include/MagickWand/MagickWand.h"
+    header "./Classes/Lib/ImageMagick/include/MagickCore/MagickCore.h"
+    export *
+}

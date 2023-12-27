@@ -17,6 +17,14 @@ ImageMagick: 7.1.0-0 Q8 arm 2021-06-02 https://imagemagick.org
 
 使用 ImageMagick [®](http://tarr.uspto.gov/servlet/tarr?regser=serial&entry=78333969)创建、编辑、合成或转换数字图像。它可以读取和写入各种[格式](https://imagemagick.org/script/formats.php)（超过 200 种）的图像，包括 PNG、JPEG、GIF、WebP、HEIC、SVG、PDF、[DPX](https://imagemagick.org/script/motion-picture.php)、[EXR](https://imagemagick.org/script/high-dynamic-range.php)和 TIFF。ImageMagick 可以调整大小、翻转、镜像、旋转、扭曲、剪切和变换图像，调整图像颜色，应用各种特殊效果，或绘制文本、线条、多边形、椭圆和贝塞尔曲线。
 
+#### 功能
+
+* 支持进度
+* 支持cli命令
+* 支持oc和swift
+* 支持fastlane打包
+* 支持模拟器
+
 #### 安装
 
 * 源码导入
@@ -32,6 +40,10 @@ ImageMagick: 7.1.0-0 Q8 arm 2021-06-02 https://imagemagick.org
   > 5、设置Library Search Paths: $(SRCROOT)递归查询(Recursive)
   >
   > 6、设置Enable Bitcode 为NO
+  
+* CocoaPods
+
+  >
 
 #### 使用
 
@@ -52,7 +64,7 @@ ImageMagick: 7.1.0-0 Q8 arm 2021-06-02 https://imagemagick.org
   ```swift
   let inputPath = Bundle.main.path(forResource: "wizard", ofType: "jpg")
   let outputPath = NSTemporaryDirectory() + "out.jpg"
-  let result = IMHelper.shared.conver(inputPath: inputPath, outputPath: outputPath)
+  let result = IMCore.shared.conver(inputPath: inputPath, outputPath: outputPath)
   if result.status == .success {
      print("success")
   } else {
@@ -65,7 +77,7 @@ ImageMagick: 7.1.0-0 Q8 arm 2021-06-02 https://imagemagick.org
   ```swift
   let inputPath = Bundle.main.path(forResource: "wizard", ofType: "jpg")
   let outputPath = NSTemporaryDirectory() + "out.jpg"
-  let result = let result = IMHelper.shared.compress(image: inputPath!, quality: 10, resize: CGSize(width: 200, height: 200), outputPath: outputPath)
+  let result = let result = IMCore.shared.compress(image: inputPath!, quality: 10, resize: CGSize(width: 200, height: 200), outputPath: outputPath)
   if result.status == .success {
      print("success")
   } else {
@@ -78,7 +90,7 @@ ImageMagick: 7.1.0-0 Q8 arm 2021-06-02 https://imagemagick.org
   ```swift
   let inputPath = Bundle.main.path(forResource: "wizard", ofType: "jpg")
   let outputPath = NSTemporaryDirectory() + "out.jpg"
-  let result = IMHelper.shared.addWatermark(mark: markPath!, inputPath: inputPath!, outputPath: outputPath)
+  let result = IMCore.shared.addWatermark(mark: markPath!, inputPath: inputPath!, outputPath: outputPath)
   if result.status == .success {
      print("success")
   } else {
@@ -89,7 +101,7 @@ ImageMagick: 7.1.0-0 Q8 arm 2021-06-02 https://imagemagick.org
 * 图片裁剪
 
   ```swift
-  let result = IMHelper.shared.crop(image: inputPath!, size: CGSize(width: 100, height: 30), point: CGPoint(x: 0, y: 0), outputPath: outputPath)
+  let result = IMCore.shared.crop(image: inputPath!, size: CGSize(width: 100, height: 30), point: CGPoint(x: 0, y: 0), outputPath: outputPath)
   ```
 
 * 使用cli的方式处理图片
@@ -98,7 +110,7 @@ ImageMagick: 7.1.0-0 Q8 arm 2021-06-02 https://imagemagick.org
   let cmd = """
       montage -background 'red' -geometry +4+4 \(inputPath!) \(markPath!) \(outputPath)
   		"""
-  let result = IMHelper.shared.cilMontage(cmds: cmd)
+  let result = IMCore.shared.cilMontage(cmds: cmd)
   if result.status == .success {
      print("success")
   } else {

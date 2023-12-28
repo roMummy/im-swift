@@ -1,21 +1,3 @@
-PODS:
-  - IMSDK (0.0.1)
-
-DEPENDENCIES:
-  - IMSDK (from `https://github.com/roMummy/im-swift/raw/main/IMSDK/IMSDK.podspec`)
-
-EXTERNAL SOURCES:
-  IMSDK:
-    :podspec: https://github.com/roMummy/im-swift/raw/main/IMSDK/IMSDK.podspec
-
-CHECKOUT OPTIONS:
-  IMSDK:
-    :commit: 7ae00471f7a9625f1e702b9732d8f3819163bb2f
-    :git: "."
-
-SPEC CHECKSUMS:
-  IMSDK: 386a3fff3474db5274972be0b06c77c9dbdbbb01
-
-PODFILE CHECKSUM: 3f86d75653f6c5f6a5d4bdb7a82c1e5a94658331
+PODFILE CHECKSUM: e11e75f9e16eb437a6b08f279f0eeca334797d51
 
 COCOAPODS: 1.12.1

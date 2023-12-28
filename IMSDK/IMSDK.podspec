@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = 'www.example.com'
   s.summary      = 'Simple packaging for ImageMagick.'
   s.description  = 'ImageMagick'
-  #s.source       = { :git => '.'}
+  s.source       = { :http => 'https://github.com/roMummy/im-swift/tree/main/IMSDK/Frameworks/IMSDK.xcframework'}
   s.platform     = :ios, '11.0'
   s.ios.deployment_target = "11.0"
   s.license      = {

@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   }
 
   s.swift_version = '5.0'
-  s.vendored_frameworks = 'Frameworks/IMSDK.xcframework'
+  s.vendored_frameworks = 'IMSDK/Frameworks/IMSDK.xcframework'
   s.libraries = 'expat.1', 'xml2'
 
   s.xcconfig = {

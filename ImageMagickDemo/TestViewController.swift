@@ -87,6 +87,10 @@ class TestViewController: UIViewController {
 //        print(number)
 
         print("----")
+        
+        IMCore.shared.progressBlock = { value in
+            print("进度：\(value)")
+        }
 
         if result.status == .success {
             print("success")

@@ -29,21 +29,15 @@ ImageMagick: 7.1.0-0 Q8 arm 2021-06-02 https://imagemagick.org
 
 * 源码导入
 
-  > 1、直接拖入iOSMagick-6.8.8-9-libs文件夹
+  > 1、直接拖入生成的Framework，路径在**/IMSDK/Frameworks**下，建议使用IMSDK.xcframework
   >
-  > 2、Link Binary With Libraries 导入libxml2.tbd
+  > 2、Link Binary With Libraries 导入libxml2.tbd、libexpat.1.tbd
   >
-  > 3、设置OTHER_CFLAGS值为-Dmacintosh=1
-  >
-  > 4、设置Header Search Paths: $(SRCROOT) 递归查询(Recursive)
-  >
-  > 5、设置Library Search Paths: $(SRCROOT)递归查询(Recursive)
-  >
-  > 6、设置Enable Bitcode 为NO
+  > 3、设置OTHER_LDFLAGS值为-lz
   
 * CocoaPods
 
-  >
+  > pod 'IMSDK', :git => 'https://github.com/roMummy/im-swift.git'
 
 #### 使用
 
@@ -58,6 +52,18 @@ ImageMagick: 7.1.0-0 Q8 arm 2021-06-02 https://imagemagick.org
 **Magick++**: 提供面向对象的C++接口。
 
 > API: https://imagemagick.org/api/Magick++/index.html
+
+
+
+* 获取进度
+
+  ```swift
+  IMCore.shared.progressBlock = { value in
+  	print("进度：\(value)")
+  }
+  ```
+
+  
 
 * 格式转换
 

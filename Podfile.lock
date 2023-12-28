@@ -2,15 +2,20 @@ PODS:
   - IMSDK (0.0.1)
 
 DEPENDENCIES:
-  - IMSDK (from `.`)
+  - IMSDK (from `https://github.com/roMummy/im-swift.git`)
 
 EXTERNAL SOURCES:
   IMSDK:
-    :path: "."
+    :git: https://github.com/roMummy/im-swift.git
+
+CHECKOUT OPTIONS:
+  IMSDK:
+    :commit: 686079667248f5c0f336ff2b4decb541fb43a498
+    :git: https://github.com/roMummy/im-swift.git
 
 SPEC CHECKSUMS:
   IMSDK: fbee67bd1a65faa64bedf9d5c65fc6cf7195d6fc
 
-PODFILE CHECKSUM: 04ae59e00d962bfc97f53fbae8302cea3d699578
+PODFILE CHECKSUM: d9a3886f466e8500084de393dfe7bf3e3e6b39c9
 
 COCOAPODS: 1.12.1

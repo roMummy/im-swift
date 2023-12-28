@@ -8,9 +8,8 @@ target 'ImageMagickDemo' do
 
   # Pods for IMSDK
   # 加载本地
-  pod 'IMSDK', :path => '.'
-  # 加载网络
-  #pod 'IMSDK', :podspec => 'https://github.com/roMummy/im-swift/raw/main/IMSDK/IMSDK.podspec'
-#  pod 'IMSDK', :git => 'https://github.com/roMummy/im-swift.git'
+#  pod 'IMSDK', :path => '.'
+  # 加载git地址
+  pod 'IMSDK', :git => 'https://github.com/roMummy/im-swift.git'
 
 end

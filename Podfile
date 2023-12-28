@@ -7,6 +7,7 @@ target 'ImageMagickDemo' do
   use_frameworks!
 
   # Pods for IMSDK
-  pod 'IMSDK', :path => './IMSDK'
+#  pod 'IMSDK', :path => './IMSDK'
+pod 'IMSDK', :podspec => 'https://github.com/roMummy/im-swift/raw/main/IMSDK/IMSDK.podspec'
 
 end

@@ -4,8 +4,6 @@ Github: https://github.com/ImageMagick/ImageMagick
 
 官网：https://imagemagick.org/
 
-demo：https://github.com/marforic/imagemagick_lib_iphone
-
 发布版：https://download.imagemagick.org/ImageMagick/download/iOS/
 
 例子：https://imagemagick.org/MagickWand/
@@ -23,7 +21,6 @@ ImageMagick: 7.1.0-0 Q8 arm 2021-06-02 https://imagemagick.org
 * 支持cli命令
 * 支持oc和swift
 * 支持fastlane打包
-* 支持模拟器
 
 #### 安装
 
@@ -38,6 +35,20 @@ ImageMagick: 7.1.0-0 Q8 arm 2021-06-02 https://imagemagick.org
 * CocoaPods
 
   > pod 'IMSDK', :git => 'https://github.com/roMummy/im-swift.git'
+
+
+
+
+
+**注意 目前不支持模拟器（m系列芯片打包有点问题 后续有时间用最新版imagemagic打包试试）**
+
+
+
+#### 更新
+
+* 2025-4-27	支持webp
+
+  
 
 #### 使用
 

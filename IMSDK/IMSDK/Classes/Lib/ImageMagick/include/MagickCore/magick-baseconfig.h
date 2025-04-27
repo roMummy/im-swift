@@ -26,9 +26,7 @@
 #endif
 
 /* Define to 1 if the `closedir' function returns void instead of `int'. */
-#ifndef MAGICKCORE_CLOSEDIR_VOID
-#define MAGICKCORE_CLOSEDIR_VOID 1
-#endif
+/* #undef CLOSEDIR_VOID */
 
 /* coders subdirectory. */
 #ifndef MAGICKCORE_CODER_DIRNAME
@@ -37,7 +35,7 @@
 
 /* Directory where architecture-dependent configuration files live. */
 #ifndef MAGICKCORE_CONFIGURE_PATH
-#define MAGICKCORE_CONFIGURE_PATH "/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick/etc/ImageMagick-7/"
+#define MAGICKCORE_CONFIGURE_PATH "/Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_x86_64/etc/ImageMagick-7/"
 #endif
 
 /* Subdirectory of lib where architecture-dependent configuration files live.
@@ -51,7 +49,7 @@
 
 /* Directory where ImageMagick documents live. */
 #ifndef MAGICKCORE_DOCUMENTATION_PATH
-#define MAGICKCORE_DOCUMENTATION_PATH "/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick/share/doc/ImageMagick-7/"
+#define MAGICKCORE_DOCUMENTATION_PATH "/Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_x86_64/share/doc/ImageMagick-7/"
 #endif
 
 /* Define if you have Display Postscript */
@@ -62,7 +60,7 @@
 
 /* Directory where executables are installed. */
 #ifndef MAGICKCORE_EXECUTABLE_PATH
-#define MAGICKCORE_EXECUTABLE_PATH "/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick/bin/"
+#define MAGICKCORE_EXECUTABLE_PATH "/Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_x86_64/bin/"
 #endif
 
 /* Define if you have FFTW library */
@@ -442,7 +440,7 @@
 /* Define to 1 if your system has a GNU libc compatible `malloc' function, and
    to 0 otherwise. */
 #ifndef MAGICKCORE_HAVE_MALLOC
-#define MAGICKCORE_HAVE_MALLOC 0
+#define MAGICKCORE_HAVE_MALLOC 1
 #endif
 
 /* Define to 1 if you have the <malloc.h> header file. */
@@ -479,7 +477,9 @@
 #endif
 
 /* Define to 1 if you have a working `mmap' system call. */
-/* #undef HAVE_MMAP */
+#ifndef MAGICKCORE_HAVE_MMAP
+#define MAGICKCORE_HAVE_MMAP 1
+#endif
 
 /* Define to 1 if you have the `munmap' function. */
 #ifndef MAGICKCORE_HAVE_MUNMAP
@@ -617,7 +617,7 @@
 /* Define to 1 if your system has a GNU libc compatible `realloc' function,
    and to 0 otherwise. */
 #ifndef MAGICKCORE_HAVE_REALLOC
-#define MAGICKCORE_HAVE_REALLOC 0
+#define MAGICKCORE_HAVE_REALLOC 1
 #endif
 
 /* Define to 1 if you have the `realpath' function. */
@@ -800,7 +800,9 @@
 #endif
 
 /* Define to 1 if you have the `strtod' function. */
-/* #undef HAVE_STRTOD */
+#ifndef MAGICKCORE_HAVE_STRTOD
+#define MAGICKCORE_HAVE_STRTOD 1
+#endif
 
 /* Define to 1 if you have the `strtod_l' function. */
 #ifndef MAGICKCORE_HAVE_STRTOD_L
@@ -1128,12 +1130,12 @@
 
 /* Directory where ImageMagick architecture headers live. */
 #ifndef MAGICKCORE_INCLUDEARCH_PATH
-#define MAGICKCORE_INCLUDEARCH_PATH "/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick/include/ImageMagick-7/"
+#define MAGICKCORE_INCLUDEARCH_PATH "/Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_x86_64/include/ImageMagick-7/"
 #endif
 
 /* Directory where ImageMagick headers live. */
 #ifndef MAGICKCORE_INCLUDE_PATH
-#define MAGICKCORE_INCLUDE_PATH "/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick/include/ImageMagick-7/"
+#define MAGICKCORE_INCLUDE_PATH "/Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_x86_64/include/ImageMagick-7/"
 #endif
 
 /* ImageMagick is formally installed under prefix */
@@ -1160,7 +1162,7 @@
 
 /* Directory where architecture-dependent files live. */
 #ifndef MAGICKCORE_LIBRARY_PATH
-#define MAGICKCORE_LIBRARY_PATH "/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick/lib/ImageMagick-7.1.0/"
+#define MAGICKCORE_LIBRARY_PATH "/Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_x86_64/lib/ImageMagick-7.1.0/"
 #endif
 
 /* Subdirectory of lib where ImageMagick architecture dependent files are
@@ -1198,7 +1200,7 @@
 
 /* Target Host CPU */
 #ifndef MAGICKCORE_MAGICK_TARGET_CPU
-#define MAGICKCORE_MAGICK_TARGET_CPU arm
+#define MAGICKCORE_MAGICK_TARGET_CPU x86_64
 #endif
 
 /* Target Host OS */
@@ -1326,7 +1328,7 @@
 
 /* Directory where architecture-independent configuration files live. */
 #ifndef MAGICKCORE_SHARE_PATH
-#define MAGICKCORE_SHARE_PATH "/Users/fskj/Desktop/imagemagick_lib_iphone-master/target/imagemagick/share/ImageMagick-7/"
+#define MAGICKCORE_SHARE_PATH "/Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_x86_64/share/ImageMagick-7/"
 #endif
 
 /* Subdirectory of lib where architecture-independent configuration files
@@ -1357,7 +1359,7 @@
 
 /* The size of `long double', as computed by sizeof. */
 #ifndef MAGICKCORE_SIZEOF_LONG_DOUBLE
-#define MAGICKCORE_SIZEOF_LONG_DOUBLE 8
+#define MAGICKCORE_SIZEOF_LONG_DOUBLE 16
 #endif
 
 /* The size of `ssize_t', as computed by sizeof. */
@@ -1425,10 +1427,14 @@
 
 
 /* Define if you have WEBPMUX library */
-/* #undef WEBPMUX_DELEGATE */
+#ifndef MAGICKCORE_WEBPMUX_DELEGATE
+#define MAGICKCORE_WEBPMUX_DELEGATE 1
+#endif
 
 /* Define if you have WEBP library */
-/* #undef WEBP_DELEGATE */
+#ifndef MAGICKCORE_WEBP_DELEGATE
+#define MAGICKCORE_WEBP_DELEGATE 1
+#endif
 
 /* Define to use the Windows GDI32 library */
 /* #undef WINGDI32_DELEGATE */
@@ -1572,9 +1578,7 @@
 /* #undef intptr_t */
 
 /* Define to rpl_malloc if the replacement function should be used. */
-#ifndef _magickcore_malloc
-#define _magickcore_malloc rpl_malloc
-#endif
+/* #undef malloc */
 
 /* Define to a type if <wchar.h> does not define. */
 /* #undef mbstate_t */
@@ -1589,9 +1593,7 @@
 /* #undef pid_t */
 
 /* Define to rpl_realloc if the replacement function should be used. */
-#ifndef _magickcore_realloc
-#define _magickcore_realloc rpl_realloc
-#endif
+/* #undef realloc */
 
 /* Define to the equivalent of the C99 'restrict' keyword, or to
    nothing if this is not supported.  Do not define if restrict is

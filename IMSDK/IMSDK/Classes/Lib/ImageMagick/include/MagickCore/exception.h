@@ -18,7 +18,7 @@
 #ifndef MAGICKCORE_EXCEPTION_H
 #define MAGICKCORE_EXCEPTION_H
 
-#include "MagickCore/mc_semaphore.h"
+#include "MagickCore/semaphore.h"
 
 #if defined(__cplusplus) || defined(c_plusplus)
 extern "C" {

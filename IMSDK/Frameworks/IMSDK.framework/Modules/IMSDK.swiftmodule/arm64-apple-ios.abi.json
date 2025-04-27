@@ -1,8 +1,8 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "TopLevel",
-    "printedName": "TopLevel",
+    "name": "IMSDK",
+    "printedName": "IMSDK",
     "children": [
       {
         "kind": "Import",
@@ -362,7 +362,23 @@
           "Final",
           "AccessControl"
         ],
-        "hasMissingDesignatedInitializers": true
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
       },
       {
         "kind": "Import",
@@ -599,6 +615,20 @@
             ],
             "enumRawTypeName": "Int",
             "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              },
               {
                 "kind": "Conformance",
                 "name": "Equatable",
@@ -1126,6 +1156,20 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -2157,6 +2201,20 @@
         "conformances": [
           {
             "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -2368,816 +2426,60 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
+      "filePath": "\/Users\/macbookpro2022m2\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
       "kind": "IntegerLiteral",
       "offset": 1186,
       "length": 2,
       "value": "12"
     },
     {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
+      "filePath": "\/Users\/macbookpro2022m2\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
       "kind": "BooleanLiteral",
       "offset": 1206,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
+      "filePath": "\/Users\/macbookpro2022m2\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
       "kind": "IntegerLiteral",
       "offset": 1256,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1359,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1563,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
-      "kind": "StringLiteral",
-      "offset": 1933,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2619,
-      "length": 2,
-      "value": "16"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2625,
-      "length": 4,
-      "value": "0xFF"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2633,
-      "length": 3,
-      "value": "255"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2669,
-      "length": 2,
-      "value": "08"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2675,
-      "length": 4,
-      "value": "0xFF"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2683,
-      "length": 3,
-      "value": "255"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2719,
-      "length": 2,
-      "value": "00"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2725,
-      "length": 4,
-      "value": "0xFF"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2733,
-      "length": 3,
-      "value": "255"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2832,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2899,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2926,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2953,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2980,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
-      "kind": "StringLiteral",
-      "offset": 3081,
-      "length": 14,
-      "value": "\"%02X%02X%02X\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3117,
-      "length": 4,
-      "value": "0xff"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3144,
-      "length": 4,
-      "value": "0xff"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3171,
-      "length": 4,
-      "value": "0xff"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 310,
-      "length": 45,
-      "value": "\"[IM] version - \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 354,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 518,
-      "length": 23,
-      "value": "\"MAGICK_CONFIGURE_PATH\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 574,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 672,
-      "length": 9,
-      "value": "\"Magick\/\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 816,
-      "length": 9,
-      "value": "\"DISPLAY\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 827,
-      "length": 4,
-      "value": "\":0\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 833,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 851,
-      "length": 23,
-      "value": "\"MAGICK_TEMPORARY_PATH\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 911,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 1163,
-      "length": 66,
-      "value": "\"convert \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 1199,
-      "length": 1,
-      "value": "\" \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 1213,
-      "length": 436,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 1623,
-      "length": 3,
-      "value": "\" \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 1659,
-      "length": 80,
-      "value": "\"convert -delay 1x\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 1700,
-      "length": 1,
-      "value": "\" \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 1709,
-      "length": 1,
-      "value": "\" \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 1723,
-      "length": 222,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 1955,
-      "length": 100,
-      "value": "\"composite -dissolve 15 -tile \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 2012,
-      "length": 1,
-      "value": "\" \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 2025,
-      "length": 1,
-      "value": "\" \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 2039,
-      "length": 1079,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 2627,
-      "length": 15,
-      "value": "\"text_temp.png\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 3128,
-      "length": 118,
-      "value": "\"convert \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 3159,
-      "length": 1,
-      "value": "\" -crop \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 3179,
-      "length": 1,
-      "value": "\"x\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 3194,
-      "length": 1,
-      "value": "\"+\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 3205,
-      "length": 1,
-      "value": "\"+\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 3216,
-      "length": 1,
-      "value": "\" \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 3230,
-      "length": 422,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
+      "filePath": "\/Users\/macbookpro2022m2\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
       "kind": "IntegerLiteral",
       "offset": 3576,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 3662,
-      "length": 124,
-      "value": "\"convert -quality \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 3705,
-      "length": 2,
-      "value": "\"%% -resize \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 3731,
-      "length": 1,
-      "value": "\"x\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 3748,
-      "length": 1,
-      "value": "\" \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 3756,
-      "length": 1,
-      "value": "\" \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 3770,
-      "length": 370,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 4150,
-      "length": 131,
-      "value": "\"    magick -debug all -fuzz \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 4201,
-      "length": 1,
-      "value": "\"%  -transparent #\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 4238,
-      "length": 1,
-      "value": "\" \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 4251,
-      "length": 1,
-      "value": "\" \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 4265,
-      "length": 842,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 4687,
-      "length": 14,
-      "value": "\"dpi_temp.jpg\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "IntegerLiteral",
-      "offset": 4771,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 4823,
-      "length": 27,
-      "value": "\"cmds is error, check cmds\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 5015,
-      "length": 20,
-      "value": "\"write to temp fail\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 5117,
-      "length": 79,
-      "value": "\"convert -density \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 5158,
-      "length": 1,
-      "value": "\" \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 5166,
-      "length": 1,
-      "value": "\" \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
-      "kind": "StringLiteral",
-      "offset": 5180,
-      "length": 2283,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/File.swift",
-      "kind": "IntegerLiteral",
-      "offset": 872,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/File.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1014,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/File.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1740,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMResult.swift",
+      "filePath": "\/Users\/macbookpro2022m2\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMResult.swift",
       "kind": "IntegerLiteral",
       "offset": 242,
       "length": 7,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMResult.swift",
-      "kind": "IntegerLiteral",
-      "offset": 242,
-      "length": 7,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/IMCore.swift",
+      "filePath": "\/Users\/macbookpro2022m2\/Desktop\/im-swift\/IMSDK\/IMSDK\/IMCore.swift",
       "kind": "IntegerLiteral",
       "offset": 2397,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/MagickCommand\/IMCommand.swift",
-      "kind": "StringLiteral",
-      "offset": 823,
-      "length": 27,
-      "value": "\"cmds is error, check cmds\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/MagickCommand\/IMCommand.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1200,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Magick.swift",
-      "kind": "StringLiteral",
-      "offset": 656,
-      "length": 48,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Magick.swift",
-      "kind": "StringLiteral",
-      "offset": 664,
-      "length": 1,
-      "value": "\" - \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Magick.swift",
-      "kind": "StringLiteral",
-      "offset": 675,
-      "length": 1,
-      "value": "\": \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Magick.swift",
-      "kind": "StringLiteral",
-      "offset": 686,
-      "length": 1,
-      "value": "\" - \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Magick.swift",
-      "kind": "StringLiteral",
-      "offset": 703,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Magick.swift",
+      "filePath": "\/Users\/macbookpro2022m2\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Magick.swift",
       "kind": "StringLiteral",
       "offset": 764,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Magick.swift",
-      "kind": "IntegerLiteral",
-      "offset": 845,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Magick.swift",
-      "kind": "IntegerLiteral",
-      "offset": 856,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Magick.swift",
-      "kind": "StringLiteral",
-      "offset": 867,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Magick.swift",
-      "kind": "StringLiteral",
-      "offset": 1097,
-      "length": 22,
-      "value": "\"ExceptionInfo is nil\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/IMTool.swift",
+      "filePath": "\/Users\/macbookpro2022m2\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/IMTool.swift",
       "kind": "Array",
       "offset": 410,
       "length": 2,
       "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/IMTool.swift",
-      "kind": "Dictionary",
-      "offset": 501,
-      "length": 3,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/IMTool.swift",
-      "kind": "StringLiteral",
-      "offset": 637,
-      "length": 9,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/IMTool.swift",
-      "kind": "StringLiteral",
-      "offset": 645,
-      "length": 4,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/IMTool.swift",
-      "kind": "StringLiteral",
-      "offset": 682,
-      "length": 9,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/IMTool.swift",
-      "kind": "StringLiteral",
-      "offset": 690,
-      "length": 7,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/IMTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 696,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/IMTool.swift",
-      "kind": "StringLiteral",
-      "offset": 718,
-      "length": 9,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/IMTool.swift",
-      "kind": "StringLiteral",
-      "offset": 726,
-      "length": 14,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/IMTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 739,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/IMTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 837,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/IMTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 842,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/IMTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 854,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/IMTool.swift",
-      "kind": "BooleanLiteral",
-      "offset": 881,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/IMTool.swift",
-      "kind": "BooleanLiteral",
-      "offset": 974,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/IMTool.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1012,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/IMTool.swift",
-      "kind": "StringLiteral",
-      "offset": 1063,
-      "length": 7,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/IMTool.swift",
-      "kind": "StringLiteral",
-      "offset": 1069,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/IMTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1571,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/IMTool.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1610,
-      "length": 3,
-      "value": "100"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/MagickCommand\/IMCommandBase.swift",
-      "kind": "Array",
-      "offset": 1277,
-      "length": 11,
-      "value": "[\"\"\", \"'\"]"
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/MagickCommand\/IMCommandBase.swift",
-      "kind": "StringLiteral",
-      "offset": 1306,
-      "length": 3,
-      "value": "\" \""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/MagickCommand\/IMCommandBase.swift",
-      "kind": "StringLiteral",
-      "offset": 1515,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/mac\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/MagickCommand\/IMCommandBase.swift",
-      "kind": "StringLiteral",
-      "offset": 1694,
-      "length": 35,
-      "value": "\"sub must implement this method!!!\""
     }
   ]
 }

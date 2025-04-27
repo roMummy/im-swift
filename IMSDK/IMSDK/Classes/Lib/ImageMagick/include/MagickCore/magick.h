@@ -23,7 +23,7 @@ extern "C" {
 #endif
 
 #include <stdarg.h>
-#include "MagickCore/mc_semaphore.h"
+#include "MagickCore/semaphore.h"
 
 #if defined(__cplusplus) || defined(c_plusplus)
 # define magick_module  _module   /* reserved word in C++(20) */

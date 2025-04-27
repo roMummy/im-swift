@@ -1,7 +1,7 @@
 framework module IMSDK {
   umbrella header "IMSDK.h"
-
   export *
+
   module * { export * }
 }
 

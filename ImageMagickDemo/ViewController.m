@@ -264,7 +264,11 @@
 //    IMResult *result = [IMCore.shared cliConvertWithCmds:cmds];
 //    [self handleResult:result];
 
-    IMResult *result = [IMCore.shared fuzzWithBgColor:UIColorFromRGB(0x888888) toColor:UIColorFromRGB(0x777777) inputPath:self.inputPath outputPath:self.outputPath];
+//    IMResult *result = [IMCore.shared fuzzWithBgColor:UIColorFromRGB(0x888888) toColor:UIColorFromRGB(0x777777) inputPath:self.inputPath outputPath:self.outputPath];
+    
+    NSString *webpOutput = [NSTemporaryDirectory() stringByAppendingString:@"output.webp"];
+    
+    IMResult *result = [IMCore.shared converWithInputPath:self.inputPath outputPath:webpOutput];
 
     [self handleResult:result];
 }

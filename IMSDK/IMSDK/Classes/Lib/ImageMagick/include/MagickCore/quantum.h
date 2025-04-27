@@ -20,7 +20,7 @@
 
 #include <float.h>
 #include "MagickCore/image.h"
-#include "MagickCore/mc_semaphore.h"
+#include "MagickCore/semaphore.h"
 
 #if defined(__cplusplus) || defined(c_plusplus)
 extern "C" {

@@ -144,7 +144,7 @@ typedef struct _ChromaticityInfo
 #include "MagickCore/quantum.h"
 #include "MagickCore/resample.h"
 #include "MagickCore/resize.h"
-#include "MagickCore/mc_semaphore.h"
+#include "MagickCore/semaphore.h"
 #include "MagickCore/stream.h"
 #include "MagickCore/timer.h"
 

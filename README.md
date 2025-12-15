@@ -40,12 +40,10 @@ ImageMagick: 7.1.0-0 Q8 arm 2021-06-02 https://imagemagick.org
 
 
 
-**注意 目前不支持模拟器（m系列芯片打包有点问题 后续有时间用最新版imagemagic打包试试）**
-
-
 
 #### 更新
 
+* 2025-12-15	支持arm模拟器
 * 2025-4-27	支持webp
 
   

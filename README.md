@@ -48,6 +48,7 @@ ImageMagick: 7.1.0-0 Q8 arm 2021-06-02 https://imagemagick.org
 
 * 2025-12-15	支持arm模拟器
 * 2025-12-15	支持SPM导入
+* 2025-12-15	支持MAC平台
 * 2025-4-27	支持webp
 
   

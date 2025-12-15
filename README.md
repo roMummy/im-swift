@@ -37,13 +37,17 @@ ImageMagick: 7.1.0-0 Q8 arm 2021-06-02 https://imagemagick.org
   > pod 'IMSDK', :git => 'https://github.com/roMummy/im-swift.git'
 
 
-
+* SPM ```Package.swift```添加：
+  > dependencies: [
+         .package(url: "https://github.com/roMummy/im-swift.git", from: "0.0.1")
+  ]
 
 
 
 #### 更新
 
 * 2025-12-15	支持arm模拟器
+* 2025-12-15	支持SPM导入
 * 2025-4-27	支持webp
 
   

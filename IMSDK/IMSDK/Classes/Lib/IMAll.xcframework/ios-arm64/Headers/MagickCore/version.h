@@ -33,7 +33,7 @@ extern "C" {
 #define MagickLibAddendum  "-3"
 #define MagickLibInterface  10
 #define MagickLibMinInterface  10
-#define MagickPlatform  "aarch64"
+#define MagickPlatform  "arm"
 #define MagickppLibVersionText  "7.1.0"
 #define MagickppLibVersionNumber  5:0:0
 #define MagickppLibAddendum  "-3"
@@ -43,7 +43,7 @@ extern "C" {
 #define MagickAuthoritativeLicense  \
   "https://imagemagick.org/script/license.php"
 #define MagickAuthoritativeURL  "https://imagemagick.org"
-#define MagickHomeURL  "file:///Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_arm64-sim/share/doc/ImageMagick-7/index.html"
+#define MagickHomeURL  "file:///Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_mac-arm64/share/doc/ImageMagick-7/index.html"
 #if (MAGICKCORE_QUANTUM_DEPTH == 8)
 #define MagickQuantumDepth  "Q8"
 #define MagickQuantumRange  "255"

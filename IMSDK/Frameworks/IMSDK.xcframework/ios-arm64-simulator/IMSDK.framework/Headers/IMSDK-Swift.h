@@ -369,16 +369,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) IMCore * _No
 /// bgColor - 透明背景
 /// toColor - 色差颜色
 - (IMResult * _Nonnull)fuzzWithBgColor:(UIColor * _Nonnull)bgColor toColor:(UIColor * _Nonnull)toColor inputPath:(NSString * _Nonnull)inputPath outputPath:(NSString * _Nonnull)outputPath SWIFT_WARN_UNUSED_RESULT;
-/// 设置dpi，png格式不支持设置dpi
-/// \param value dpi值
-///
-/// \param inputPath 输入路径
-///
-/// \param outputPath 输出路径
-///
-///
-/// returns:
-/// 结果
 - (IMResult * _Nonnull)dpiWithValue:(float)value image:(UIImage * _Nonnull)image outputPath:(NSString * _Nonnull)outputPath SWIFT_WARN_UNUSED_RESULT;
 /// convert 命令
 /// eg: ‘convert rose.jpg -resize 50% rose.png’

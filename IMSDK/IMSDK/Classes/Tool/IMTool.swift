@@ -6,7 +6,11 @@
 //
 
 import Foundation
-import UIKit.UIColor
+#if canImport(UIKit)
+import UIKit
+#elseif canImport(AppKit)
+import AppKit
+#endif
 
 struct IMTool {
     
@@ -38,7 +42,7 @@ struct IMTool {
         return result.map{"\($0)"}
     }
     /// fuzz 算法
-    static func fuzz(fromColor: UIColor, toColor: UIColor) -> CGFloat {
+    static func fuzz(fromColor: IMColor, toColor: IMColor) -> CGFloat {
         /*"%[fx:(100)*sqrt( ( (u.r-v.r)^2 +
                                 (u.g-v.g)^2 +
                                 (u.b-v.b)^2 )*u.a*v.a/3   + (u.a-v.a)^2  )  ]%%" */

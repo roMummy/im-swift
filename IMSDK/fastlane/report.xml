@@ -5,17 +5,22 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.000455">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.000202">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: xcbuild" time="4.636053">
+      <testcase classname="fastlane.lanes" name="1: xcbuild" time="5.158846">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: xcbuild" time="4.04967">
+      <testcase classname="fastlane.lanes" name="2: xcbuild" time="4.757545">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="3: xcbuild" time="4.686553">
         
       </testcase>
     

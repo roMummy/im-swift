@@ -38,4 +38,12 @@ lane :buildSDK do
       configuration: "Release",
       xcargs: "-sdk iphoneos ARCHS='arm64' "
   )
+
+  # Mac 
+  xcbuild(
+      scheme: customScheme,
+      clean: true,
+      configuration: "Release",
+      xcargs: "-sdk macosx ARCHS='arm64' MACOSX_DEPLOYMENT_TARGET=11.0"
+  )
 end

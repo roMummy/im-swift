@@ -1836,8 +1836,7 @@
             "objc_name": "dpiWithValue:image:outputPath:",
             "declAttributes": [
               "AccessControl",
-              "ObjC",
-              "RawDocComment"
+              "ObjC"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -2356,8 +2355,8 @@
       },
       {
         "kind": "Import",
-        "name": "UIKit.UIColor",
-        "printedName": "UIKit.UIColor",
+        "name": "UIKit",
+        "printedName": "UIKit",
         "declKind": "Import",
         "moduleName": "IMSDK"
       },
@@ -2428,28 +2427,28 @@
     {
       "filePath": "\/Users\/macbookpro2022m2\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
       "kind": "IntegerLiteral",
-      "offset": 1186,
+      "offset": 1319,
       "length": 2,
       "value": "12"
     },
     {
       "filePath": "\/Users\/macbookpro2022m2\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
       "kind": "BooleanLiteral",
-      "offset": 1206,
+      "offset": 1339,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/macbookpro2022m2\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Extension\/ExtTool.swift",
       "kind": "IntegerLiteral",
-      "offset": 1256,
+      "offset": 1389,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/macbookpro2022m2\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/IMHelper.swift",
       "kind": "IntegerLiteral",
-      "offset": 3576,
+      "offset": 3996,
       "length": 3,
       "value": "100"
     },
@@ -2463,7 +2462,7 @@
     {
       "filePath": "\/Users\/macbookpro2022m2\/Desktop\/im-swift\/IMSDK\/IMSDK\/IMCore.swift",
       "kind": "IntegerLiteral",
-      "offset": 2397,
+      "offset": 2465,
       "length": 3,
       "value": "100"
     },
@@ -2477,7 +2476,7 @@
     {
       "filePath": "\/Users\/macbookpro2022m2\/Desktop\/im-swift\/IMSDK\/IMSDK\/Classes\/Tool\/IMTool.swift",
       "kind": "Array",
-      "offset": 410,
+      "offset": 470,
       "length": 2,
       "value": "[]"
     }

@@ -6,8 +6,7 @@ Pod::Spec.new do |s|
   s.summary      = 'Simple packaging for ImageMagick.'
   s.description  = 'ImageMagick'
   s.source       = { :git => 'https://github.com/roMummy/im-swift.git'}
-  s.platform     = :ios, '11.0'
-  s.ios.deployment_target = "11.0"
+  s.platforms    = { :ios => '11.0', :osx => '10.13' }
   s.license      = {
     :type => 'MIT',
     :file => 'LICENSE',

@@ -6,7 +6,11 @@
 //
 
 import Foundation
+#if canImport(UIKit)
 import UIKit
+#elseif canImport(AppKit)
+import AppKit
+#endif
 
 /// IMSDK 对外暴露类
 open class IMCore: NSObject {
@@ -50,7 +54,7 @@ open class IMCore: NSObject {
     ///   - outputPath: 输出路径
     /// - Returns: result
     @objc
-    public func addWatermark(text: String, textColor: UIColor, inputPath: String, outputPath: String) -> IMResult? {
+    public func addWatermark(text: String, textColor: IMColor, inputPath: String, outputPath: String) -> IMResult? {
         return IMHelper.shared.addWatermark(text: text, textColor: textColor, inputPath: inputPath, outputPath: outputPath)
     }
     
@@ -78,7 +82,7 @@ open class IMCore: NSObject {
     /// bgColor - 透明背景
     /// toColor - 色差颜色
     @objc
-    public func fuzz(bgColor: UIColor, toColor: UIColor, inputPath: String, outputPath: String) -> IMResult {
+    public func fuzz(bgColor: IMColor, toColor: IMColor, inputPath: String, outputPath: String) -> IMResult {
         return IMHelper.shared.fuzz(bgColor: bgColor, toColor: toColor, inputPath: inputPath, outputPath: outputPath)
     }
     
@@ -89,10 +93,12 @@ open class IMCore: NSObject {
     ///   - inputPath: 输入路径
     ///   - outputPath: 输出路径
     /// - Returns: 结果
+    #if canImport(UIKit)
     @objc
     public func dpi(value: Float, image: UIImage, outputPath: String) -> IMResult {
         return IMHelper.shared.dpi(value: CGFloat(value), image: image, outputPath: outputPath)
     }
+    #endif
         
     // MARK: - CLI
     

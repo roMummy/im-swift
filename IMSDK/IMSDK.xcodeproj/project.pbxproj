@@ -423,8 +423,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8A3LKRT8JP;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -434,6 +436,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/IMSDK/Classes/Lib/IMAll.xcframework/ios-arm64/Headers",
 					"$(PROJECT_DIR)/IMSDK/Classes/Lib/IMAll.xcframework/ios-arm64-simulator/Headers",
+					"$(PROJECT_DIR)/IMSDK/Classes/Lib/IMAll.xcframework/macos-arm64/Headers",
 				);
 				INFOPLIST_FILE = IMSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -450,7 +453,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.IMSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/IMSDK/";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 5.0;
@@ -463,8 +468,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8A3LKRT8JP;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -474,6 +481,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/IMSDK/Classes/Lib/IMAll.xcframework/ios-arm64/Headers",
 					"$(PROJECT_DIR)/IMSDK/Classes/Lib/IMAll.xcframework/ios-arm64-simulator/Headers",
+					"$(PROJECT_DIR)/IMSDK/Classes/Lib/IMAll.xcframework/macos-arm64/Headers",
 				);
 				INFOPLIST_FILE = IMSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -489,7 +497,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.IMSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/IMSDK/";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_VERSION = 5.0;

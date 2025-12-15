@@ -6,7 +6,11 @@
 //
 
 import Foundation
+#if canImport(UIKit)
 import UIKit
+#elseif canImport(AppKit)
+import AppKit
+#endif
 @_implementationOnly import Magick
 
 class IMHelper: NSObject {
@@ -79,19 +83,24 @@ class IMHelper: NSObject {
     ///   - outputPath: 输出路径
     /// - Returns: result
     @objc
-    func addWatermark(text: String, textColor: UIColor, inputPath: String, outputPath: String) -> IMResult? {
-        // text to image
+    func addWatermark(text: String, textColor: IMColor, inputPath: String, outputPath: String) -> IMResult? {
         guard let image = text.toImage(textColor: textColor) else {
             return nil
         }
-        // save to temp dir
         let path = NSTemporaryDirectory() + "text_temp.png"
-        
+        #if canImport(UIKit)
         if let data = image.pngData() {
             let url = URL(fileURLWithPath: path)
             try? data.write(to: url)
             return addWatermark(mark: path, inputPath: inputPath, outputPath: outputPath)
         }
+        #elseif canImport(AppKit)
+        if let tiff = image.tiffRepresentation, let rep = NSBitmapImageRep(data: tiff), let data = rep.representation(using: .png, properties: [:]) {
+            let url = URL(fileURLWithPath: path)
+            try? data.write(to: url)
+            return addWatermark(mark: path, inputPath: inputPath, outputPath: outputPath)
+        }
+        #endif
         return nil
     }
     
@@ -127,7 +136,7 @@ class IMHelper: NSObject {
     /// bgColor - 透明背景
     /// toColor - 色差颜色
     @objc
-    func fuzz(bgColor: UIColor, toColor: UIColor, inputPath: String, outputPath: String) -> IMResult {
+    func fuzz(bgColor: IMColor, toColor: IMColor, inputPath: String, outputPath: String) -> IMResult {
         let fuzz = IMTool.fuzz(fromColor: bgColor, toColor: toColor)
         
         let cmds =
@@ -144,6 +153,7 @@ class IMHelper: NSObject {
     ///   - inputPath: 输入路径
     ///   - outputPath: 输出路径
     /// - Returns: 结果
+    #if canImport(UIKit)
     @objc
     func dpi(value: CGFloat, image: UIImage, outputPath: String) -> IMResult {
         // save to temp
@@ -165,6 +175,7 @@ class IMHelper: NSObject {
             """
         return cliConvert(cmds:cmds)
     }
+    #endif
     
     // MARK: - CLI
     // https://imagemagick.org/script/command-line-processing.php

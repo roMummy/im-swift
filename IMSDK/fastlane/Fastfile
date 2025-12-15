@@ -29,7 +29,7 @@ lane :buildSDK do
       scheme: customScheme,
       clean: true,
       configuration: "Release",
-      xcargs: "-sdk iphonesimulator ARCHS='x86_64' "
+      xcargs: "-sdk iphonesimulator ARCHS='arm64' "
   )
 
   xcbuild(

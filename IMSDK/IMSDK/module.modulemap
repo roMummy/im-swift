@@ -1,5 +1,7 @@
 module Magick [system] {
-    header "./Classes/Lib/ImageMagick/include/MagickWand/MagickWand.h"
-    header "./Classes/Lib/ImageMagick/include/MagickCore/MagickCore.h"
+    header "./Classes/Lib/IMAll.xcframework/ios-arm64/Headers/MagickWand/MagickWand.h"
+    header "./Classes/Lib/IMAll.xcframework/ios-arm64/Headers/MagickCore/MagickCore.h"
+    header "./Classes/Lib/IMAll.xcframework/ios-arm64-simulator/Headers/MagickWand/MagickWand.h"
+    header "./Classes/Lib/IMAll.xcframework/ios-arm64-simulator/Headers/MagickCore/MagickCore.h"
     export *
 }

@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name         = 'IMSDK'
-  s.version      = '0.0.1'
+  s.version      = '0.0.2'
   s.authors      = 'tw', { 'tw' => '' }
   s.homepage     = 'www.example.com'
   s.summary      = 'Simple packaging for ImageMagick.'
   s.description  = 'ImageMagick'
-  s.source       = { :git => 'https://github.com/roMummy/im-swift.git'}
+  s.source       = { :git => 'https://github.com/roMummy/im-swift.git', :tag => s.version.to_s }
   s.platforms    = { :ios => '11.0', :osx => '10.13' }
   s.license      = {
     :type => 'MIT',

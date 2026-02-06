@@ -5,22 +5,29 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.000202">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.000194">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: xcbuild" time="5.158846">
+      <testcase classname="fastlane.lanes" name="1: xcbuild" time="4.806894">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: xcbuild" time="4.757545">
+      <testcase classname="fastlane.lanes" name="2: 
+    /usr/bin/arch -x86_64 xcodebuild       -project ../IMSDK.xcodeproj       -scheme IMSDK       -configuration Release       -sdk macosx       ARCHS=x86_64 ONLY_ACTIVE_ARCH=YES MACOSX_DEPLOYMENT_TARGET=11.0       build
+  " time="10.434623">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: xcbuild" time="4.686553">
+      <testcase classname="fastlane.lanes" name="3: xcbuild" time="4.434883">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="4: xcbuild" time="4.146964">
         
       </testcase>
     

@@ -35,7 +35,7 @@
 
 /* Directory where architecture-dependent configuration files live. */
 #ifndef MAGICKCORE_CONFIGURE_PATH
-#define MAGICKCORE_CONFIGURE_PATH "/Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_mac-arm64/etc/ImageMagick-7/"
+#define MAGICKCORE_CONFIGURE_PATH "/Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_mac-x86_64/etc/ImageMagick-7/"
 #endif
 
 /* Subdirectory of lib where architecture-dependent configuration files live.
@@ -49,7 +49,7 @@
 
 /* Directory where ImageMagick documents live. */
 #ifndef MAGICKCORE_DOCUMENTATION_PATH
-#define MAGICKCORE_DOCUMENTATION_PATH "/Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_mac-arm64/share/doc/ImageMagick-7/"
+#define MAGICKCORE_DOCUMENTATION_PATH "/Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_mac-x86_64/share/doc/ImageMagick-7/"
 #endif
 
 /* Define if you have Display Postscript */
@@ -60,7 +60,7 @@
 
 /* Directory where executables are installed. */
 #ifndef MAGICKCORE_EXECUTABLE_PATH
-#define MAGICKCORE_EXECUTABLE_PATH "/Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_mac-arm64/bin/"
+#define MAGICKCORE_EXECUTABLE_PATH "/Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_mac-x86_64/bin/"
 #endif
 
 /* Define if you have FFTW library */
@@ -1130,12 +1130,12 @@
 
 /* Directory where ImageMagick architecture headers live. */
 #ifndef MAGICKCORE_INCLUDEARCH_PATH
-#define MAGICKCORE_INCLUDEARCH_PATH "/Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_mac-arm64/include/ImageMagick-7/"
+#define MAGICKCORE_INCLUDEARCH_PATH "/Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_mac-x86_64/include/ImageMagick-7/"
 #endif
 
 /* Directory where ImageMagick headers live. */
 #ifndef MAGICKCORE_INCLUDE_PATH
-#define MAGICKCORE_INCLUDE_PATH "/Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_mac-arm64/include/ImageMagick-7/"
+#define MAGICKCORE_INCLUDE_PATH "/Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_mac-x86_64/include/ImageMagick-7/"
 #endif
 
 /* ImageMagick is formally installed under prefix */
@@ -1162,7 +1162,7 @@
 
 /* Directory where architecture-dependent files live. */
 #ifndef MAGICKCORE_LIBRARY_PATH
-#define MAGICKCORE_LIBRARY_PATH "/Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_mac-arm64/lib/ImageMagick-7.1.0/"
+#define MAGICKCORE_LIBRARY_PATH "/Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_mac-x86_64/lib/ImageMagick-7.1.0/"
 #endif
 
 /* Subdirectory of lib where ImageMagick architecture dependent files are
@@ -1200,7 +1200,7 @@
 
 /* Target Host CPU */
 #ifndef MAGICKCORE_MAGICK_TARGET_CPU
-#define MAGICKCORE_MAGICK_TARGET_CPU arm
+#define MAGICKCORE_MAGICK_TARGET_CPU x86_64
 #endif
 
 /* Target Host OS */
@@ -1328,7 +1328,7 @@
 
 /* Directory where architecture-independent configuration files live. */
 #ifndef MAGICKCORE_SHARE_PATH
-#define MAGICKCORE_SHARE_PATH "/Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_mac-arm64/share/ImageMagick-7/"
+#define MAGICKCORE_SHARE_PATH "/Users/macbookpro2022m2/Desktop/imagemagick_lib_ios/target/imagemagick_mac-x86_64/share/ImageMagick-7/"
 #endif
 
 /* Subdirectory of lib where architecture-independent configuration files
@@ -1359,7 +1359,7 @@
 
 /* The size of `long double', as computed by sizeof. */
 #ifndef MAGICKCORE_SIZEOF_LONG_DOUBLE
-#define MAGICKCORE_SIZEOF_LONG_DOUBLE 8
+#define MAGICKCORE_SIZEOF_LONG_DOUBLE 16
 #endif
 
 /* The size of `ssize_t', as computed by sizeof. */

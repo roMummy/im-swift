@@ -25,25 +25,37 @@ end
 desc "打包SDK"
 lane :buildSDK do
   customScheme = "IMSDK"
-  xcbuild(     
+  # Mac arm64 先构建
+  xcbuild(
       scheme: customScheme,
       clean: true,
       configuration: "Release",
-      xcargs: "-sdk iphonesimulator ARCHS='arm64' "
+      xcargs: "-sdk macosx ARCHS='arm64' MACOSX_DEPLOYMENT_TARGET=11.0"
   )
 
-  xcbuild(
+  # Mac x86_64（在 Apple Silicon 上通过 Rosetta 运行 xcodebuild）
+  sh(%Q{
+    /usr/bin/arch -x86_64 xcodebuild \
+      -project ../IMSDK.xcodeproj \
+      -scheme #{customScheme} \
+      -configuration Release \
+      -sdk macosx \
+      ARCHS=x86_64 ONLY_ACTIVE_ARCH=YES MACOSX_DEPLOYMENT_TARGET=11.0 \
+      build
+  })
+
+  # iOS（放到最后触发合并，确保 macOS 双架构已就绪）
+  xcbuild(     
       scheme: customScheme,
       clean: true,
       configuration: "Release",
       xcargs: "-sdk iphoneos ARCHS='arm64' "
   )
 
-  # Mac 
   xcbuild(
       scheme: customScheme,
       clean: true,
       configuration: "Release",
-      xcargs: "-sdk macosx ARCHS='arm64' MACOSX_DEPLOYMENT_TARGET=11.0"
+      xcargs: "-sdk iphonesimulator ARCHS='arm64' "
   )
 end

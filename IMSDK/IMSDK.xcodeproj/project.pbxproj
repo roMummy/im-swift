@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		352B12E12EEFADC6000DDFBF /* IMAll.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 352B12E02EEFADC6000DDFBF /* IMAll.xcframework */; };
+		352D6BB82F35D9490048E5C2 /* IMAll.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 352D6BB72F35D9480048E5C2 /* IMAll.xcframework */; };
 		EB152CDE26DA3EE500DF14A3 /* IMCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB152CDD26DA3EE500DF14A3 /* IMCore.swift */; };
 		EB46F60126CCE30900816C80 /* IMSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = EB46F5FF26CCE30900816C80 /* IMSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EB46F61E26CCE43A00816C80 /* ExtTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46F60A26CCE43A00816C80 /* ExtTool.swift */; };
@@ -34,7 +34,7 @@
 /* Begin PBXFileReference section */
 		0406F49A2B3C1919006F64A4 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		0406F49C2B3C1930006F64A4 /* libexpat.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libexpat.1.tbd; path = usr/lib/libexpat.1.tbd; sourceTree = SDKROOT; };
-		352B12E02EEFADC6000DDFBF /* IMAll.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = IMAll.xcframework; sourceTree = "<group>"; };
+		352D6BB72F35D9480048E5C2 /* IMAll.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = IMAll.xcframework; sourceTree = "<group>"; };
 		35DC90DA2DBA22A20099368B /* IMSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IMSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB152CDD26DA3EE500DF14A3 /* IMCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMCore.swift; sourceTree = "<group>"; };
 		EB46F5FF26CCE30900816C80 /* IMSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMSDK.h; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				352B12E12EEFADC6000DDFBF /* IMAll.xcframework in Frameworks */,
+				352D6BB82F35D9490048E5C2 /* IMAll.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +165,7 @@
 		EB46F63026CCE44E00816C80 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				352B12E02EEFADC6000DDFBF /* IMAll.xcframework */,
+				352D6BB72F35D9480048E5C2 /* IMAll.xcframework */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -431,7 +431,6 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EXCLUDED_ARCHS = "";
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = x86_64;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/IMSDK/Classes/Lib/IMAll.xcframework/ios-arm64/Headers",
@@ -476,7 +475,6 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EXCLUDED_ARCHS = "";
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = x86_64;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/IMSDK/Classes/Lib/IMAll.xcframework/ios-arm64/Headers",

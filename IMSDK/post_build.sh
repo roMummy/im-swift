@@ -117,7 +117,37 @@ case "$PLATFORM_NAME" in
     ;;
   macosx)
     echo "macOS"
-    OUT_DIR="${ROOT}/macos"
+    # 为不同架构分别输出，避免覆盖
+    # 优先使用 CURRENT_ARCH；若为空则从 ARCHS 推断第一个
+    ARCH_VALUE="${CURRENT_ARCH}"
+    if [ -z "$ARCH_VALUE" ]; then
+      ARCH_VALUE="$(echo "$ARCHS" | awk '{print $1}')"
+    fi
+    # 以实际产物为准探测架构，避免环境变量不准
+    BIN_PATH="${BUILT_PRODUCTS_DIR}/${PRODUCT}.framework/${PRODUCT}"
+    if [ -f "${BIN_PATH}" ]; then
+      ARCH_DETECT="$(lipo -info "${BIN_PATH}" 2>/dev/null || true)"
+      case "$ARCH_DETECT" in
+        *"architecture: arm64"*)
+          ARCH_VALUE="arm64"
+          ;;
+        *"architecture: x86_64"*)
+          ARCH_VALUE="x86_64"
+          ;;
+      esac
+    fi
+    case "$ARCH_VALUE" in
+      arm64)
+        OUT_DIR="${ROOT}/macos-arm64"
+        ;;
+      x86_64)
+        OUT_DIR="${ROOT}/macos-x86_64"
+        ;;
+      *)
+        # 兜底：未知架构时写入通用 macos 目录
+        OUT_DIR="${ROOT}/macos"
+        ;;
+    esac
     ;;
   *)
     echo "Unsupported platform: $PLATFORM_NAME"
@@ -151,15 +181,73 @@ cp -R "${SRC_FW}" "${OUT_DIR}"
 echo "Copied: ${OUT_DIR}/${PRODUCT}.framework"
 
 # -----------------------------
+# 3.1 macOS: 自动构建另一架构并合成 fat 框架
+# -----------------------------
+if [ "$PLATFORM_NAME" = "macosx" ]; then
+  # 推断当前架构
+  ARCH_VALUE="${CURRENT_ARCH}"
+  if [ -z "$ARCH_VALUE" ]; then
+    ARCH_VALUE="$(echo "$ARCHS" | awk '{print $1}')"
+  fi
+
+  PROJ_PATH="${PROJECT_FILE_PATH}"
+  if [ -z "$PROJ_PATH" ]; then
+    PROJ_PATH="${SRCROOT}/../IMSDK.xcodeproj"
+  fi
+  SCHEME="${PRODUCT_NAME}"
+
+  # 另一架构的 dist 输出路径（由本脚本复制）
+  ARM_DIST_FW="${ROOT}/macos-arm64/${PRODUCT}.framework"
+  X64_DIST_FW="${ROOT}/macos-x86_64/${PRODUCT}.framework"
+
+  # 若当前是 arm64，则构建 x86_64；反之亦然
+  if [ "$ARCH_VALUE" = "arm64" ]; then
+    echo "Build missing macOS x86_64 slice..."
+    /usr/bin/arch -x86_64 xcodebuild -project "${PROJ_PATH}" -scheme "${SCHEME}" -configuration "${CONFIGURATION}" -sdk macosx ARCHS=x86_64 ONLY_ACTIVE_ARCH=YES build || true
+  elif [ "$ARCH_VALUE" = "x86_64" ]; then
+    echo "Build missing macOS arm64 slice..."
+    xcodebuild -project "${PROJ_PATH}" -scheme "${SCHEME}" -configuration "${CONFIGURATION}" -sdk macosx ARCHS=arm64 ONLY_ACTIVE_ARCH=YES build || true
+  fi
+
+  # 尝试定位两种架构框架（从 dist 路径）
+  if [ -d "${ARM_DIST_FW}" ] && [ -d "${X64_DIST_FW}" ]; then
+    echo "Create macOS universal (fat) framework..."
+    FAT_DIR="${ROOT}/macos"
+    rm -rf "${FAT_DIR}"
+    mkdir -p "${FAT_DIR}"
+
+    # 基于 arm64 框架复制结构
+    cp -R "${ARM_DIST_FW}" "${FAT_DIR}"
+    FAT_FW="${FAT_DIR}/${PRODUCT}.framework"
+    FAT_BIN="${FAT_FW}/${PRODUCT}"
+
+    # 先删除复制的二进制，再以两架构合成
+    rm -f "${FAT_BIN}"
+    lipo -create "${ARM_DIST_FW}/${PRODUCT}" "${X64_DIST_FW}/${PRODUCT}" -output "${FAT_BIN}"
+    echo "macOS universal framework ready: ${FAT_FW}"
+  else
+    echo "Not both macOS slices present; skip fat merge"
+  fi
+fi
+
+# -----------------------------
 # 4. 准备合并 XCFramework
 # -----------------------------
 IOS_FW="${ROOT}/iphoneos/${PRODUCT}.framework"
 SIM_FW="${ROOT}/iphonesimulator/${PRODUCT}.framework"
-MAC_FW="${ROOT}/macos/${PRODUCT}.framework"
+MAC_UNI="${ROOT}/macos/${PRODUCT}.framework"
+MAC_ARM="${ROOT}/macos-arm64/${PRODUCT}.framework"
+MAC_X64="${ROOT}/macos-x86_64/${PRODUCT}.framework"
 
 # 等 iOS device + simulator
 if [ ! -d "${IOS_FW}" ] || [ ! -d "${SIM_FW}" ]; then
   echo "Waiting for iOS device & simulator"
+  exit 0
+fi
+
+# 等 macOS：必须存在通用 macos 或同时存在 macos-arm64 与 macos-x86_64
+if [ ! -d "${MAC_UNI}" ] && { [ ! -d "${MAC_ARM}" ] || [ ! -d "${MAC_X64}" ]; }; then
+  echo "Waiting for macOS arm64 & x86_64"
   exit 0
 fi
 
@@ -177,10 +265,14 @@ XC_ARGS=(
   -framework "${SIM_FW}"
 )
 
-# macOS 是可选的
-if [ -d "${MAC_FW}" ]; then
-  echo "Including macOS framework"
-  XC_ARGS+=( -framework "${MAC_FW}" )
+# macOS：优先加入通用 macos 目录；否则分别加入 arm64 / x86_64（两者都加入）
+if [ -d "${MAC_UNI}" ]; then
+  echo "Including macOS (universal) framework"
+  XC_ARGS+=( -framework "${MAC_UNI}" )
+else
+  echo "Including macOS arm64 + x86_64 frameworks"
+  XC_ARGS+=( -framework "${MAC_ARM}" )
+  XC_ARGS+=( -framework "${MAC_X64}" )
 fi
 
 xcodebuild "${XC_ARGS[@]}" -output "${XC_OUT}"
@@ -191,10 +283,18 @@ xcodebuild "${XC_ARGS[@]}" -output "${XC_OUT}"
 echo "===== XCFramework Info ====="
 plutil -p "${XC_OUT}/Info.plist"
 
+# 验证 macOS 切片（兼容不同命名）
 if [ -d "${XC_OUT}/macos-arm64_x86_64" ]; then
-  echo "===== macOS Mach-O ====="
+  echo "===== macOS (arm64_x86_64) Mach-O ====="
   file "${XC_OUT}/macos-arm64_x86_64/${PRODUCT}.framework/${PRODUCT}"
+fi
+if [ -d "${XC_OUT}/macos-arm64" ]; then
+  echo "===== macOS (arm64) Mach-O ====="
+  file "${XC_OUT}/macos-arm64/${PRODUCT}.framework/${PRODUCT}"
+fi
+if [ -d "${XC_OUT}/macos-x86_64" ]; then
+  echo "===== macOS (x86_64) Mach-O ====="
+  file "${XC_OUT}/macos-x86_64/${PRODUCT}.framework/${PRODUCT}"
 fi
 
 echo "===== Packaging Done ====="
-

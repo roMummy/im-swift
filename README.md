@@ -22,6 +22,7 @@ ImageMagick: 7.1.0-0 Q8 arm 2021-06-02 https://imagemagick.org
 * 支持oc和swift
 * 支持fastlane打包
 * 支持mac arm平台
+* 支持mac x86_64平台
 
 #### 安装
 
@@ -40,13 +41,15 @@ ImageMagick: 7.1.0-0 Q8 arm 2021-06-02 https://imagemagick.org
 
 * SPM ```Package.swift```添加：
   > dependencies: [
-         .package(url: "https://github.com/roMummy/im-swift.git", from: "0.0.2")
+         .package(url: "https://github.com/roMummy/im-swift.git", from: "0.0.3")
   ]
 
 
 
 #### 更新
 
+* 2026-2-6
+> 支持mac x86_64平台
 * 2025-12-15
 >	支持arm模拟器
 > 支持SPM导入
